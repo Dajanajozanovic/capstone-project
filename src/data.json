@@ -1,0 +1,51 @@
+[
+  {
+    "type": "card",
+    "attributes": {
+      "title": "Elbphilharmonie",
+      "text": "The Elbphilharmonie is a concert hall in Hamburg,completed in November 2016. It was planned with the aim of creating a new landmark for the city and acultural monument for all",
+      "id": 1,
+      "image": "https://images.unsplash.com/photo-1589797268361-34bd218908de?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=975&q=80"
+    }
+  },
+
+  {
+    "type": "card",
+    "attributes": {
+      "title": "St. Michaeliskirche",
+      "text": " The main Protestant church of St.Michael's is the most famous church building in Hamburg and is considered the    most important Baroque church in northern Germany. For shipping on the Elbe River, the sacred building with its striking architecture, visible from afar, has long been the landmark of the Hanseatic city.",
+      "id": 2,
+      "image": "https://amp.mopo.de/image/37376648/max/1920/1080/f3726a105bec8c4955a922760b369f40/Ih/hauptkirche-michel-in-hamburg.jpg"
+    }
+  },
+
+  {
+    "type": "card",
+    "attributes": {
+      "title": "Hafen",
+      "text": "The Port of Hamburg is an open tidal port on the Lower Elbe River in the Free and Hanseatic City of Hamburg. It is the largest seaport in Germany and the third largest in Europe after the port of Rotterdam and the port of Antwerp.",
+      "id": 3,
+      "image": "https://grafik.hamburg-magazin.de/hhm/4f69/4f694e08220c1167ea290dd77f0a05d1t_970x360.jpg"
+    }
+  },
+
+  {
+    "type": "card",
+    "attributes": {
+      "title": "Hafencity",
+      "text": "HafenCity is home to the Elbphilharmonie Hamburg concert hall, a city landmark with a striking facade and state-of-the-art acoustics. The district also includes Speicherstadt, with its 19th-century brick warehouses that house Spicy's spice museum and the Miniatur Wunderland model train layout. In Sandtorhafen, near Hamburg's bustling harbor, historic ships are anchored, providing a striking contrast to the upscale apartment buildings and hip cafes on the waterfront.",
+      "id": 4,
+      "image": "https://www.zahnarzt-hamburg-dr-jalilvand.de/media/shop/layout/stock/zahnzentrum_hafencity--header-start-0-lg.jpg"
+    }
+  },
+
+  {
+    "type": "card",
+    "attributes": {
+      "title": "Alster",
+      "text": "The Alster is a 56 kilometer long tributary of the Elbe and flows through southern Holstein and Hamburg. The most famous and concise part of the Alster is the Alstersee, which is formed in the inner-city area of Hamburg by the Binnenalster and Außenalster.",
+      "id": 4,
+      "image": "https://www.miniatur-wunderland.com/assets/content/Content-hamburg-alster.jpg"
+    }
+  }
+]

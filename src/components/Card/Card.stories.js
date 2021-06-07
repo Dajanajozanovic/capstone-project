@@ -1,5 +1,5 @@
 import Card from './Card'
-import imageFile from './../images/sightseeing/Elbphilharmonie.jpg'
+import imageFile from './../../images/sightseeing/Elbphilharmonie.jpg'
 
 export default {
   title: 'Card',
@@ -12,5 +12,5 @@ export const Default = Template.bind({})
 Default.args = {
   image: imageFile,
   title: 'Elbphilharmonie',
-  text: 'Hello world',
+  text: 'This is the info-text about the location above',
 }
