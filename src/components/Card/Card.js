@@ -28,7 +28,7 @@ const WrapperList = styled.ul`
     #a2b6df 100%
   );
   padding: 20px;
-  justify-self: center;
+  align-items: center;
   border-radius: 8px;
   box-shadow: 0 8px 16px #0006;
   display: grid;
@@ -39,14 +39,13 @@ const WrapperList = styled.ul`
   list-style-type: none;
   font-size: 20px;
   color: white;
-  align-items: center;
 
   img {
     justify-self: center;
     width: 90%;
     max-width: 500px;
-    margin: 20px;
-    border-radius: 10px;
+    margin: 10px;
+    border-radius: 50px;
     object-fit: cover;
   }
 
