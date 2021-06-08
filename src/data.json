@@ -1,51 +1,85 @@
-[
-  {
-    "type": "card",
-    "attributes": {
+{
+  "sightseeing": [
+    {
+      "type": "card",
+      "id": 1,
       "title": "Elbphilharmonie",
       "text": "The Elbphilharmonie is a concert hall in Hamburg,completed in November 2016. It was planned with the aim of creating a new landmark for the city and acultural monument for all",
-      "id": 1,
       "image": "https://images.unsplash.com/photo-1589797268361-34bd218908de?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=975&q=80"
-    }
-  },
+    },
 
-  {
-    "type": "card",
-    "attributes": {
-      "title": "St. Michaeliskirche",
-      "text": " The main Protestant church of St.Michael's is the most famous church building in Hamburg and is considered the    most important Baroque church in northern Germany. For shipping on the Elbe River, the sacred building with its striking architecture, visible from afar, has long been the landmark of the Hanseatic city.",
+    {
+      "type": "card",
       "id": 2,
+      "title": "St. Michaeliskirche",
+      "text": " The main Protestant church of St.Michael's is the most famous church building in Hamburg and is considered the most important Baroque church in northern Germany. For shipping on the Elbe River, the sacred building with its striking architecture, visible from afar, has long been the landmark of the Hanseatic city.",
       "image": "https://amp.mopo.de/image/37376648/max/1920/1080/f3726a105bec8c4955a922760b369f40/Ih/hauptkirche-michel-in-hamburg.jpg"
-    }
-  },
+    },
 
-  {
-    "type": "card",
-    "attributes": {
+    {
+      "type": "card",
+      "id": 3,
       "title": "Hafen",
       "text": "The Port of Hamburg is an open tidal port on the Lower Elbe River in the Free and Hanseatic City of Hamburg. It is the largest seaport in Germany and the third largest in Europe after the port of Rotterdam and the port of Antwerp.",
-      "id": 3,
       "image": "https://grafik.hamburg-magazin.de/hhm/4f69/4f694e08220c1167ea290dd77f0a05d1t_970x360.jpg"
-    }
-  },
+    },
 
-  {
-    "type": "card",
-    "attributes": {
+    {
+      "type": "card",
+      "id": 4,
       "title": "Hafencity",
       "text": "HafenCity is home to the Elbphilharmonie Hamburg concert hall, a city landmark with a striking facade and state-of-the-art acoustics. The district also includes Speicherstadt, with its 19th-century brick warehouses that house Spicy's spice museum and the Miniatur Wunderland model train layout. In Sandtorhafen, near Hamburg's bustling harbor, historic ships are anchored, providing a striking contrast to the upscale apartment buildings and hip cafes on the waterfront.",
-      "id": 4,
       "image": "https://www.zahnarzt-hamburg-dr-jalilvand.de/media/shop/layout/stock/zahnzentrum_hafencity--header-start-0-lg.jpg"
-    }
-  },
+    },
 
-  {
-    "type": "card",
-    "attributes": {
+    {
+      "type": "card",
+      "id": 5,
       "title": "Alster",
       "text": "The Alster is a 56 kilometer long tributary of the Elbe and flows through southern Holstein and Hamburg. The most famous and concise part of the Alster is the Alstersee, which is formed in the inner-city area of Hamburg by the Binnenalster and Außenalster.",
-      "id": 4,
       "image": "https://www.miniatur-wunderland.com/assets/content/Content-hamburg-alster.jpg"
     }
-  }
-]
+  ],
+
+  "restaurants": [
+    {
+      "type": "card",
+      "id": 6,
+      "title": "ASHOKA Indisches Restaurant",
+      "text": "Traditionally opulently decorated dining rooms serve food with a focus on North Indian cuisine.",
+      "image": "https://media-cdn.tripadvisor.com/media/photo-s/02/5a/ac/e6/ashoka.jpg"
+    },
+
+    {
+      "type": "card",
+      "id": 7,
+      "title": "Brasserie Flum",
+      "text": " Hotel's own fine dining restaurant with Art Nouveau decor combining French cuisine and Hanseatic dishes.",
+      "image": "https://hnxo-prod.imgix.net/2020/09/GE_Brasserie_Terrasse_wordpress.jpg?fit=crop&w=800&h=450&auto=format&auto=compress"
+    },
+
+    {
+      "type": "card",
+      "id": 8,
+      "title": "Fischereihafen-Restaurant",
+      "text": "Sushi, fish and seafood specialties in an elegant, family atmosphere with oyster bar and sun terrace.",
+      "image": "https://www.fischereihafenrestaurant.de/fileadmin/user_upload/hintergrund_bilder/start/IMG_2762.JPG"
+    },
+
+    {
+      "type": "card",
+      "id": 9,
+      "title": "Restaurant Santé!",
+      "text": "The bright traditional bistro specializes in fish and seafood and the wines to match.",
+      "image": "https://lh3.googleusercontent.com/proxy/en_mg63vN_bvqf5bupKcsypNrTm9XMEQ2F2Ap2FeWJzzmADj_uxMh3PHmQw7QQItywMidzX1gk0ZuOs346hHKU8Twbi7--OUccgM9N8EGeGR2r8Tw0Ls"
+    },
+
+    {
+      "type": "card",
+      "id": 10,
+      "title": "ALEX Hamburg",
+      "text": "Your favorite pub cafe bar bistro restaurant. Delicious food and drink - enjoy relaxed. Vacation from everyday life!",
+      "image": "https://www.food-service.de/gallery/media/880/18082-detailp.jpeg"
+    }
+  ]
+}
