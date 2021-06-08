@@ -1,10 +1,9 @@
 import SightseeingPage from './pages/Sightseeingpage/SightseeingPage'
 import RestaurantPage from './pages/RestaurantPage/RestaurantPage'
-import { useState } from 'react'
+
 import styled from 'styled-components'
 
 export default function App() {
-  const [currentPageId, setCurrentPageId] = useState('sightseeing')
   return (
     <AppGrid>
       <SightseeingPage nameOfCategory="Sightseeing" />
