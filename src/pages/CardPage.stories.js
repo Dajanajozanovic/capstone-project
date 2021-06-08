@@ -1,12 +1,13 @@
-// import CardPage from './CardPage'
-// export default {
-//   title: 'CardPage',
-//   component: CardPage,
-// }
+import CardPage from './CardPage'
 
-// const Template = args => <CardPage {...args} />
+export default {
+  title: 'CardPage',
+  component: CardPage,
+}
 
-// export const listedCards = Template.bind({})
-// listedCards.args = {
-//   cards: [{ image: 'imageFile', h2: 'title' }],
-// }
+const Template = args => <CardPage {...args} />
+
+export const Default = Template.bind({})
+Default.args = {
+  nameOfCategory: 'header',
+}

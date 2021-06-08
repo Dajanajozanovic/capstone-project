@@ -20,6 +20,13 @@ export default function Card({ text, title, image }) {
 }
 
 const WrapperList = styled.ul`
+  background-image: linear-gradient(
+    to top,
+    #0c3483 0%,
+    #a2b6df 100%,
+    #6b8cce 100%,
+    #a2b6df 100%
+  );
   padding: 20px;
   justify-self: center;
   border-radius: 8px;
@@ -28,7 +35,7 @@ const WrapperList = styled.ul`
   grid-template-rows: 1fr;
   width: 90vw;
   max-width: 600px;
-  font-family: 'Hamburg';
+  font-family: 'Roboto';
   list-style-type: none;
   font-size: 20px;
   color: white;

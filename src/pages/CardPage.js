@@ -1,23 +1,28 @@
-// import PropTypes from 'prop-types'
-// import Card from './../components/Card/Card'
-// import styled from 'styled-components'
+import PropTypes from 'prop-types'
+import Card from './../components/Card/Card'
+import location from './../data.json'
+import styled from 'styled-components'
+import Header from './../components/Header/Header'
 
-// CardPage.propTypes = {
-//   image: PropTypes.string.isRequired,
-//   title: PropTypes.string,
-//   text: PropTypes.string,
-// }
+CardPage.propTypes = {
+  nameOfCategory: PropTypes.string,
+}
 
-// export default function CardPage() {
-//   return (
-//     <Grid>
-//       <Card image="image" h2="title" />
-//       <Card image="image" h2="title" />
-//       <Card />
-//     </Grid>
-//   )
-// }
-
-// const Grid = styled.section`
-//   display: grid;
-// `
+export default function CardPage({ nameOfCategory }) {
+  return (
+    <div>
+      <Header>{nameOfCategory}</Header>
+      {location.map(location => {
+        const { id, attributes } = location
+        return (
+          <Card
+            key={id}
+            image={attributes.image}
+            title={attributes.title}
+            text={attributes.text}
+          />
+        )
+      })}
+    </div>
+  )
+}
