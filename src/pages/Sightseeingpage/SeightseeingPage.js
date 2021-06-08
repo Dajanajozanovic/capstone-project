@@ -1,15 +1,15 @@
 import PropTypes from 'prop-types'
-import Card from './../components/Card/Card'
-import location from './../data.json'
+import Card from './../../components/Card/Card'
+import location from './../../data.json'
 import styled from 'styled-components'
-import Header from './../components/Header/Header'
-import Button from './../components/Button/Button'
+import Header from './../../components/Header/Header'
+import Button from './../../components/Button/Button'
 
-CardPage.propTypes = {
+SeightseeingPage.propTypes = {
   nameOfCategory: PropTypes.string,
 }
 
-export default function CardPage({ nameOfCategory }) {
+export default function SeightseeingPage({ nameOfCategory }) {
   return (
     <Grid>
       <div>
