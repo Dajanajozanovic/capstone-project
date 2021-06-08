@@ -2,8 +2,6 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components/macro'
 
 Button.propTypes = {
-  isActive: PropTypes.bool,
-  onClick: PropTypes.func,
   children: PropTypes.node,
 }
 
@@ -14,9 +12,10 @@ export default function Button(props) {
 const ButtonStyled = styled.button`
   padding: 12px;
   border: none;
-  background: ${p => (p.isActive ? '#dbdbdb' : 'grey')};
+  font-family: 'Roboto';
+  font-size: 20px;
+  width: 100vw;
+  border-radius: 26px;
+  background: #dcdcdc;
+  box-shadow: 35px 35px 70px #585858, -35px -35px 70px #ffffff;
 `
-
-/* background: #dbdbdb;
-box-shadow:  24px 24px 48px #bababa,
-             -24px -24px 48px #fcfcfc; */
