@@ -1,20 +1,25 @@
-import CardItem from './components/Card/Card'
-import location from './data.json'
+import SightseeingPage from './pages/Sightseeingpage/SightseeingPage'
+import RestaurantPage from './pages/RestaurantPage/RestaurantPage'
+import { useState } from 'react'
+import styled from 'styled-components'
 
 export default function App() {
+  const [currentPageId, setCurrentPageId] = useState('sightseeing')
   return (
-    <div>
-      {location.map(location => {
-        const { id, attributes } = location
-        return (
-          <CardItem
-            key={id}
-            image={attributes.image}
-            title={attributes.title}
-            text={attributes.text}
-          />
-        )
-      })}
-    </div>
+    <AppGrid>
+      <SightseeingPage nameOfCategory="Sightseeing" />
+
+      <RestaurantPage nameOfCategory="Restaurants" />
+    </AppGrid>
   )
 }
+
+const AppGrid = styled.div`
+  display: grid;
+  justify-content: center;
+  grid-template-rows: auto min-content;
+  height: 100vh;
+  width: 100vw;
+  padding: 12px;
+  gap: 20px;
+`
