@@ -1,16 +1,29 @@
-import SightseeingPage from './pages/Sightseeingpage/SightseeingPage'
+import styled from 'styled-components'
+import { useState } from 'react'
+import Sightseeingpage from './pages/Sightseeingpage/SightseeingPage'
 import RestaurantPage from './pages/RestaurantPage/RestaurantPage'
 
-import styled from 'styled-components'
-
 export default function App() {
+  const [currentPage, setCurrentPage] = useState('sightseeingPage')
+
   return (
     <AppGrid>
-      <SightseeingPage nameOfCategory="Sightseeing" />
+      {currentPage === 'sightseeingPage' && (
+        <Sightseeingpage onNavigate={showSightseeingPage} />
+      )}
 
-      <RestaurantPage nameOfCategory="Restaurants" />
+      {currentPage === 'restaurantPage' && (
+        <RestaurantPage onNavigate={showRestaurantPage} />
+      )}
     </AppGrid>
   )
+
+  function showRestaurantPage() {
+    setCurrentPage('sightseeingPage')
+  }
+  function showSightseeingPage() {
+    setCurrentPage('restaurantPage')
+  }
 }
 
 const AppGrid = styled.div`

@@ -3,6 +3,7 @@ import styled from 'styled-components/macro'
 
 Button.propTypes = {
   children: PropTypes.node,
+  onClick: PropTypes.func.isRequired,
 }
 
 export default function Button(props) {
@@ -15,7 +16,14 @@ const ButtonStyled = styled.button`
   font-family: 'Roboto';
   font-size: 20px;
   width: 100vw;
-  border-radius: 26px;
-  background: #dcdcdc;
-  box-shadow: 35px 35px 70px #585858, -35px -35px 70px #ffffff;
+  color: white;
+  border-radius: 31px;
+  background-image: linear-gradient(
+    to top,
+    #0c3483 0%,
+    #a2b6df 100%,
+    #6b8cce 100%,
+    #a2b6df 100%
+  );
+  box-shadow: 224px 24px 48px #656565, -24px -24px 48px #ffffff;
 `

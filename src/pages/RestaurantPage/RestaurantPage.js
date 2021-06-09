@@ -1,31 +1,45 @@
 import PropTypes from 'prop-types'
 import Card from './../../components/Card/Card'
-import location from './../../data.json'
+import locations from './../../data.json'
 import styled from 'styled-components'
 import Header from './../../components/Header/Header'
 import Button from './../../components/Button/Button'
 
 RestaurantPage.propTypes = {
-  nameOfCategory: PropTypes.string,
+  restaurants: PropTypes.arrayOf(
+    PropTypes.shape({
+      image: PropTypes.node,
+      title: PropTypes.string,
+      text: PropTypes.string,
+    })
+  ),
+  onNavigate: PropTypes.func.isRequired,
 }
 
-export default function RestaurantPage({ nameOfCategory }) {
+export default function RestaurantPage({ onNavigate }) {
   return (
-    <Grid>
-      <div>
-        <Header>{nameOfCategory}</Header>
-        {location.restaurants.map(location => {
-          const { id, image, title, text } = location
+    <Wrapper>
+      <Header>Food and Drinks</Header>
+      <ListWrapper>
+        {locations.restaurants.map(restaurant => {
+          const { id, image, title, text } = restaurant
           return <Card key={id} image={image} title={title} text={text} />
         })}
-        <Button>Home</Button>
-      </div>
-    </Grid>
+      </ListWrapper>
+      <Button onClick={onNavigate}>Sightseeing</Button>
+    </Wrapper>
   )
 }
-const Grid = styled.section`
+
+const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 20px;
+`
+const ListWrapper = styled.ul`
+  list-style-type: none;
+  display: grid;
+  gap: 10px;
+  padding: 5px;
 `
