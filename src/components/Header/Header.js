@@ -1,14 +1,12 @@
 import styled from 'styled-components/macro'
 import PropTypes from 'prop-types'
-import { uuid } from 'uuidv4'
 
 Header.propTypes = {
   children: PropTypes.node,
-  uuid: PropTypes.string,
 }
 
 export default function Header({ children, uuid }) {
-  return <HeaderStyled key={uuid}>{children}</HeaderStyled>
+  return <HeaderStyled>{children}</HeaderStyled>
 }
 
 const HeaderStyled = styled.h2`

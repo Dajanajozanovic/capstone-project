@@ -9,21 +9,14 @@ export default function App() {
   return (
     <AppGrid>
       {currentPage === 'sightseeingPage' && (
-        <Sightseeingpage onNavigate={showSightseeingPage} />
+        <Sightseeingpage onNavigate={() => setCurrentPage('restaurantPage')} />
       )}
 
       {currentPage === 'restaurantPage' && (
-        <RestaurantPage onNavigate={showRestaurantPage} />
+        <RestaurantPage onNavigate={() => setCurrentPage('sightseeingPage')} />
       )}
     </AppGrid>
   )
-
-  function showRestaurantPage() {
-    setCurrentPage('sightseeingPage')
-  }
-  function showSightseeingPage() {
-    setCurrentPage('restaurantPage')
-  }
 }
 
 const AppGrid = styled.div`

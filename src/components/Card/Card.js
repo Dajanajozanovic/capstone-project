@@ -32,7 +32,7 @@ const WrapperList = styled.ul`
   border-radius: 8px;
   box-shadow: 0 8px 16px #0006;
   display: grid;
-  grid-template-rows: 1fr;
+
   width: 90vw;
   max-width: 600px;
   font-family: 'Roboto';
@@ -45,7 +45,7 @@ const WrapperList = styled.ul`
     width: 90%;
     max-width: 500px;
     margin: 10px;
-    border-radius: 50px;
+    border-radius: 40px;
     object-fit: cover;
   }
 

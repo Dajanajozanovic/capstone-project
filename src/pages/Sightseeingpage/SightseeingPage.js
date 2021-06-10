@@ -1,18 +1,11 @@
 import PropTypes from 'prop-types'
 import Card from '../../components/Card/Card'
 import locations from '../../data.json'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 import Header from '../../components/Header/Header'
 import Button from '../../components/Button/Button'
 
 SightseeingPage.propTypes = {
-  sightseeing: PropTypes.arrayOf(
-    PropTypes.shape({
-      image: PropTypes.node,
-      title: PropTypes.string,
-      text: PropTypes.string,
-    })
-  ),
   onNavigate: PropTypes.func.isRequired,
 }
 
@@ -21,12 +14,11 @@ export default function SightseeingPage({ onNavigate }) {
     <Wrapper>
       <Header>Sightseeing</Header>
       <ListWrapper>
-        {locations.sightseeing.map(sightseeing => {
-          const { id, image, title, text } = sightseeing
+        {locations.sightseeing.map(({ id, image, title, text }) => {
           return <Card key={id} image={image} title={title} text={text} />
         })}
       </ListWrapper>
-      <Button onClick={onNavigate}>Restaurants</Button>
+      <Button onClick={onNavigate}>Food and Bars</Button>
     </Wrapper>
   )
 }

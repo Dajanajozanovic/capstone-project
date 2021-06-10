@@ -1,18 +1,11 @@
 import PropTypes from 'prop-types'
 import Card from './../../components/Card/Card'
 import locations from './../../data.json'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 import Header from './../../components/Header/Header'
 import Button from './../../components/Button/Button'
 
 RestaurantPage.propTypes = {
-  restaurants: PropTypes.arrayOf(
-    PropTypes.shape({
-      image: PropTypes.node,
-      title: PropTypes.string,
-      text: PropTypes.string,
-    })
-  ),
   onNavigate: PropTypes.func.isRequired,
 }
 

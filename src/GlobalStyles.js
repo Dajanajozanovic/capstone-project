@@ -7,7 +7,7 @@ export default createGlobalStyle`
 }
 body {
     margin: 0;
-    /* padding: 10px; */
+   
     font-family: 'Roboto', sans-serif;
     
     color: black;
