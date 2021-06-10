@@ -15,7 +15,7 @@ const ButtonStyled = styled.button`
   border: none;
   font-family: 'Roboto';
   font-size: 20px;
-  width: 100vw;
+  width: 200px;
   color: white;
   border-radius: 31px;
   background-image: linear-gradient(

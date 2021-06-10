@@ -10,16 +10,14 @@ Card.propTypes = {
 export default function Card({ text, title, image }) {
   return (
     <WrapperList>
-      <li>
-        <img src={image} alt="" />
-        <h2>{title}</h2>
-        <p>{text}</p>
-      </li>
+      <img src={image} alt="" />
+      <h2>{title}</h2>
+      <p>{text}</p>
     </WrapperList>
   )
 }
 
-const WrapperList = styled.ul`
+const WrapperList = styled.li`
   background-image: linear-gradient(
     to top,
     #0c3483 0%,
@@ -32,9 +30,8 @@ const WrapperList = styled.ul`
   border-radius: 8px;
   box-shadow: 0 8px 16px #0006;
   display: grid;
+  max-width: 100%;
 
-  width: 90vw;
-  max-width: 600px;
   font-family: 'Roboto';
   list-style-type: none;
   font-size: 20px;

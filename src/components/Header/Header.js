@@ -11,9 +11,9 @@ export default function Header({ children, uuid }) {
 
 const HeaderStyled = styled.h2`
   display: grid;
-  width: 100vw;
+  width: 100%;
   place-items: center;
-  padding: 8px;
+
   margin: 0;
   font-size: 1.2em;
   font-weight: 500;

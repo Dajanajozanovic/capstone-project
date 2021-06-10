@@ -23,8 +23,8 @@ const AppGrid = styled.div`
   display: grid;
   justify-content: center;
   grid-template-rows: auto min-content;
-  height: 100vh;
-  width: 100vw;
-  padding: 12px;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
   gap: 20px;
 `
