@@ -11,6 +11,7 @@ export default function Header({ children, uuid }) {
 
 const HeaderStyled = styled.h2`
   display: grid;
+  width: 100vw;
   place-items: center;
   padding: 8px;
   margin: 0;

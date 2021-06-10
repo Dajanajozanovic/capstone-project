@@ -25,7 +25,8 @@ export default function SightseeingPage({ onNavigate }) {
 const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
   gap: 20px;
 `
 const ListWrapper = styled.ul`
