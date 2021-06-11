@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from 'styled-components'
+import { useState } from 'react'
+import Sightseeingpage from './pages/Sightseeingpage/SightseeingPage'
+import RestaurantPage from './pages/RestaurantPage/RestaurantPage'
 
-function App() {
+export default function App() {
+  const [currentPage, setCurrentPage] = useState('sightseeingPage')
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <AppGrid>
+      {currentPage === 'sightseeingPage' && (
+        <Sightseeingpage onNavigate={() => setCurrentPage('restaurantPage')} />
+      )}
+
+      {currentPage === 'restaurantPage' && (
+        <RestaurantPage onNavigate={() => setCurrentPage('sightseeingPage')} />
+      )}
+    </AppGrid>
+  )
 }
 
-export default App;
+const AppGrid = styled.div`
+  display: grid;
+  justify-content: center;
+  grid-template-rows: auto min-content;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  gap: 20px;
+`
