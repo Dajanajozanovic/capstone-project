@@ -14,9 +14,21 @@ export default function SightseeingPage({ onNavigate }) {
     <Wrapper>
       <Header>Sightseeing</Header>
       <ListWrapper>
-        {locations.sightseeing.map(({ id, image, title, text }) => {
-          return <Card key={id} image={image} title={title} text={text} />
-        })}
+        {locations.sightseeing.map(
+          ({ id, image, title, text, adress, openingHours, entry }) => {
+            return (
+              <Card
+                key={id}
+                image={image}
+                title={title}
+                text={text}
+                adress={adress}
+                openingHours={openingHours}
+                entry={entry}
+              />
+            )
+          }
+        )}
       </ListWrapper>
       <Button onClick={onNavigate}>Food and Bars</Button>
     </Wrapper>
