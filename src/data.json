@@ -6,7 +6,7 @@
       "title": "Elbphilharmonie",
       "text": "The Elbphilharmonie is a concert hall in Hamburg,completed in November 2016. It was planned with the aim of creating a new landmark for the city and acultural monument for all",
       "image": "https://images.unsplash.com/photo-1589797268361-34bd218908de?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=975&q=80",
-      "adress": "Platz der Deutschen Einheit 4, 20457 Hamburg",
+      "address": "Platz der Deutschen Einheit 4, 20457 Hamburg",
       "openingHours": "10:00 - 23:45",
       "entry": "2,00 € p.P."
     },
@@ -17,7 +17,7 @@
       "title": "St. Michaeliskirche",
       "text": " The main Protestant church of St.Michael's is the most famous church building in Hamburg and is considered the most important Baroque church in northern Germany. For shipping on the Elbe River, the sacred building with its striking architecture, visible from afar, has long been the landmark of the Hanseatic city.",
       "image": "https://amp.mopo.de/image/37376648/max/1920/1080/f3726a105bec8c4955a922760b369f40/Ih/hauptkirche-michel-in-hamburg.jpg",
-      "adress": "Englische Planke 1, 20459 Hamburg",
+      "address": "Englische Planke 1, 20459 Hamburg",
       "openingHours": "Nov-March: 10:00 - 18:00 April - Okt: 09:00 - 19:00 Mai-September: 09:00 - 20:00",
       "entry": "The entry is free!"
     },
@@ -28,7 +28,7 @@
       "title": "Hafen",
       "text": "The Port of Hamburg is an open tidal port on the Lower Elbe River in the Free and Hanseatic City of Hamburg. It is the largest seaport in Germany and the third largest in Europe after the port of Rotterdam and the port of Antwerp.",
       "image": "https://grafik.hamburg-magazin.de/hhm/4f69/4f694e08220c1167ea290dd77f0a05d1t_970x360.jpg",
-      "adress": "An den Landungsbrücken, 20459 Hamburg",
+      "address": "An den Landungsbrücken, 20459 Hamburg",
       "openingHours": "24 hours open",
       "entry": "The entry is free!"
     },
@@ -39,7 +39,7 @@
       "title": "Hafencity",
       "text": "HafenCity is home to the Elbphilharmonie Hamburg concert hall, a city landmark with a striking facade and state-of-the-art acoustics. The district also includes Speicherstadt, with its 19th-century brick warehouses that house Spicy's spice museum and the Miniatur Wunderland model train layout. In Sandtorhafen, near Hamburg's bustling harbor, historic ships are anchored, providing a striking contrast to the upscale apartment buildings and hip cafes on the waterfront.",
       "image": "https://www.zahnarzt-hamburg-dr-jalilvand.de/media/shop/layout/stock/zahnzentrum_hafencity--header-start-0-lg.jpg",
-      "adress": "Hafencity, 20457 Hamburg",
+      "address": "Hafencity, 20457 Hamburg",
       "openingHours": "24 hours open",
       "entry": "The entry is free!"
     },
@@ -50,7 +50,7 @@
       "title": "Alster",
       "text": "The Alster is a 56 kilometer long tributary of the Elbe and flows through southern Holstein and Hamburg. The most famous and concise part of the Alster is the Alstersee, which is formed in the inner-city area of Hamburg by the Binnenalster and Außenalster.",
       "image": "https://www.miniatur-wunderland.com/assets/content/Content-hamburg-alster.jpg",
-      "adress": "Alster, Hamburg",
+      "address": "Alster, Hamburg",
       "openingHours": "24 hours open",
       "entry": "The entry is free!"
     }
@@ -63,7 +63,7 @@
       "title": "ASHOKA Indisches Restaurant",
       "text": "Traditionally opulently decorated dining rooms serve food with a focus on North Indian cuisine.",
       "image": "https://media-cdn.tripadvisor.com/media/photo-s/02/5a/ac/e6/ashoka.jpg",
-      "adress": "Budapester Str. 25, 20359 Hamburg",
+      "address": "Budapester Str. 25, 20359 Hamburg",
       "openingHours": "17:00 - 23:00"
     },
 
@@ -73,7 +73,7 @@
       "title": "Brasserie Flum",
       "text": " Hotel's own fine dining restaurant with Art Nouveau decor combining French cuisine and Hanseatic dishes.",
       "image": "https://hnxo-prod.imgix.net/2020/09/GE_Brasserie_Terrasse_wordpress.jpg?fit=crop&w=800&h=450&auto=format&auto=compress",
-      "adress": "Rothenbaumchaussee 10, 20148 Hamburg",
+      "address": "Rothenbaumchaussee 10, 20148 Hamburg",
       "openingHours": "12:00 - 23:00"
     },
 
@@ -83,7 +83,7 @@
       "title": "Fischereihafen-Restaurant",
       "text": "Sushi, fish and seafood specialties in an elegant, family atmosphere with oyster bar and sun terrace.",
       "image": "https://www.fischereihafenrestaurant.de/fileadmin/user_upload/hintergrund_bilder/start/IMG_2762.JPG",
-      "adress": "Rothenbaumchaussee 10, 20148 Hamburg",
+      "address": "Rothenbaumchaussee 10, 20148 Hamburg",
       "openingHours": "12:00 - 23:00"
     },
 
@@ -93,7 +93,7 @@
       "title": "Restaurant Santé!",
       "text": "The bright traditional bistro specializes in fish and seafood and the wines to match.",
       "image": "https://www.speisekarte.de/file/183/183102.6e662aeb8aabf06a5edef862b4534ffb.jpg",
-      "adress": "Moorkamp 6, 20357 Hamburg",
+      "address": "Moorkamp 6, 20357 Hamburg",
       "openingHours": "12:00 - 23:00"
     },
 
@@ -103,7 +103,7 @@
       "title": "ALEX Hamburg",
       "text": "Your favorite pub cafe bar bistro restaurant. Delicious food and drink - enjoy relaxed. Vacation from everyday life!",
       "image": "https://www.food-service.de/gallery/media/880/18082-detailp.jpeg",
-      "adress": "Jungfernstieg 54, 20354 Hamburg",
+      "address": "Jungfernstieg 54, 20354 Hamburg",
       "openingHours": "08:00 - 01:00"
     }
   ]

@@ -15,14 +15,14 @@ export default function SightseeingPage({ onNavigate }) {
       <Header>Sightseeing</Header>
       <ListWrapper>
         {locations.sightseeing.map(
-          ({ id, image, title, text, adress, openingHours, entry }) => {
+          ({ id, image, title, text, address, openingHours, entry }) => {
             return (
               <Card
                 key={id}
                 image={image}
                 title={title}
                 text={text}
-                adress={adress}
+                address={address}
                 openingHours={openingHours}
                 entry={entry}
               />

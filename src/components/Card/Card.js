@@ -6,7 +6,7 @@ Card.propTypes = {
   image: PropTypes.node.isRequired,
   title: PropTypes.string,
   text: PropTypes.string,
-  adress: PropTypes.string,
+  address: PropTypes.string,
   openingHours: PropTypes.string,
   entry: PropTypes.string,
 }
@@ -15,7 +15,7 @@ export default function Card({
   text,
   title,
   image,
-  adress,
+  address,
   openingHours,
   entry,
 }) {
@@ -29,7 +29,7 @@ export default function Card({
 
       {isExpanded && (
         <ul>
-          <li>{adress}</li>
+          <li>{address}</li>
           <li>{openingHours}</li>
           <li>{entry}</li>
         </ul>

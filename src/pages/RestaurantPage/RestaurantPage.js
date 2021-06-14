@@ -20,7 +20,7 @@ export default function RestaurantPage({ onNavigate }) {
             image,
             title,
             text,
-            adress,
+            address,
             openingHours,
             entry,
           } = restaurant
@@ -30,7 +30,7 @@ export default function RestaurantPage({ onNavigate }) {
               image={image}
               title={title}
               text={text}
-              adress={adress}
+              address={address}
               openingHours={openingHours}
               entry={entry}
             />
