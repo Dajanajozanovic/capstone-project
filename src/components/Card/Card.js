@@ -22,32 +22,27 @@ export default function Card({
   const [isExpanded, setIsExpanded] = useState(false)
 
   return (
-    <WrapperCardList isExpanded={isExpanded}>
-      <img isExpanded={isExpanded} src={image} alt="" />
-      <h2 isExpanded={isExpanded}>{title}</h2>
-      <p isExpanded={isExpanded}>{text}</p>
+    <WrapperCardList>
+      <img src={image} alt="" />
+      <h2>{title}</h2>
+      <p>{text}</p>
 
       {isExpanded && (
-        <>
-          <ul>
-            <li>{adress}</li>
-            <li>{openingHours}</li>
-            <li>{entry}</li>
-          </ul>
-        </>
+        <ul>
+          <li>{adress}</li>
+          <li>{openingHours}</li>
+          <li>{entry}</li>
+        </ul>
       )}
 
-      <ButtonExpansion
-        isExpanded={isExpanded}
-        onClick={() => setIsExpanded(!isExpanded)}
-      >
+      <ButtonExpansion onClick={() => setIsExpanded(!isExpanded)}>
         {isExpanded ? 'Hide details' : 'Show details'}
       </ButtonExpansion>
     </WrapperCardList>
   )
 }
 
-const WrapperCardList = styled.div`
+const WrapperCardList = styled.section`
   h2 {
     font-size: 25px;
   }
