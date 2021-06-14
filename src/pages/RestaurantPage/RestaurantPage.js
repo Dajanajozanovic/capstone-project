@@ -15,8 +15,26 @@ export default function RestaurantPage({ onNavigate }) {
       <Header>Food and Drinks</Header>
       <ListWrapper>
         {locations.restaurants.map(restaurant => {
-          const { id, image, title, text } = restaurant
-          return <Card key={id} image={image} title={title} text={text} />
+          const {
+            id,
+            image,
+            title,
+            text,
+            address,
+            openingHours,
+            entry,
+          } = restaurant
+          return (
+            <Card
+              key={id}
+              image={image}
+              title={title}
+              text={text}
+              address={address}
+              openingHours={openingHours}
+              entry={entry}
+            />
+          )
         })}
       </ListWrapper>
       <Button onClick={onNavigate}>Sightseeing</Button>
