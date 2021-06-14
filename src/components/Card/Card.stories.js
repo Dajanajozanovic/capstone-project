@@ -2,7 +2,7 @@ import Card from './Card'
 import imageFile from './../../images/sightseeing/Elbphilharmonie.jpg'
 
 export default {
-  title: 'Card',
+  title: 'Components/Card',
   component: Card,
 }
 

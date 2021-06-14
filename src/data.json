@@ -18,7 +18,11 @@
       "text": " The main Protestant church of St.Michael's is the most famous church building in Hamburg and is considered the most important Baroque church in northern Germany. For shipping on the Elbe River, the sacred building with its striking architecture, visible from afar, has long been the landmark of the Hanseatic city.",
       "image": "https://amp.mopo.de/image/37376648/max/1920/1080/f3726a105bec8c4955a922760b369f40/Ih/hauptkirche-michel-in-hamburg.jpg",
       "address": "Englische Planke 1, 20459 Hamburg",
-      "openingHours": "Nov-March: 10:00 - 18:00 April - Okt: 09:00 - 19:00 Mai-September: 09:00 - 20:00",
+      "openingHours": [
+        "Nov-March: 10:00 - 18:00",
+        "April - Okt: 09:00 - 19:00",
+        "Mai-September: 09:00 - 20:00"
+      ],
       "entry": "The entry is free!"
     },
 

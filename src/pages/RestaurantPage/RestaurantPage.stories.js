@@ -1,7 +1,7 @@
 import RestaurantPage from './RestaurantPage'
 
 export default {
-  title: 'RestaurantPage',
+  title: 'Pages/RestaurantPage',
   component: RestaurantPage,
 }
 
