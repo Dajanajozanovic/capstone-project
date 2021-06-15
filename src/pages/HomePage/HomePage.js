@@ -1,6 +1,6 @@
 import styled from 'styled-components/macro'
 import Header from './../../components/Header/Header'
-import Button from './../../components/Button/Button'
+
 import PropTypes from 'prop-types'
 
 HomePage.propTypes = {
@@ -11,10 +11,7 @@ export default function HomePage({ onNavigate }) {
   return (
     <Wrapper>
       <Header>App title</Header>
-      <PageButtons>
-        <Button onClick={onNavigate}>Sightseeing</Button>
-        <Button onClick={onNavigate}>Foods and Drinks</Button>
-      </PageButtons>
+
       <div>
         <Image src="https://media-cdn.tripadvisor.com/media/photo-s/02/5a/ac/e6/ashoka.jpg" />
         <Image src="https://www.handelsblatt.com/images/container-terminal-altenwerder/26116210/2-format2020.jpg" />

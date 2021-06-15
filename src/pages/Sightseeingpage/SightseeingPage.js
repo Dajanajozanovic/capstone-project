@@ -30,7 +30,6 @@ export default function SightseeingPage({ onNavigate }) {
           }
         )}
       </ListWrapper>
-      <Button onClick={onNavigate}>Food and Bars</Button>
     </Wrapper>
   )
 }
