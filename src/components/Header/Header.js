@@ -31,6 +31,6 @@ const HeaderStyled = styled.h2`
     #6b8cce 100%,
     #a2b6df 100%
   );
-  box-shadow: 224px 24px 48px #656565, -24px -24px 48px #ffffff;
+  box-shadow: 24px 24px 48px #656565, -24px -24px 48px #ffffff;
   border-radius: 31px;
 `
