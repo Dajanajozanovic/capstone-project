@@ -29,8 +29,10 @@ export default function Card({
 
       {isExpanded && (
         <ul>
+          {openingHours.map(openingHours => (
+            <li>{openingHours}</li>
+          ))}
           <li>{address}</li>
-          <li>{openingHours}</li>
           <li>{entry}</li>
         </ul>
       )}
