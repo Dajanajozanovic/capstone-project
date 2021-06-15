@@ -13,7 +13,7 @@ const HeaderStyled = styled.h2`
   display: grid;
   width: 100%;
   place-items: center;
-
+  font-family: 'Roboto';
   margin: 0;
   font-size: 1.2em;
   font-weight: 500;
@@ -21,7 +21,6 @@ const HeaderStyled = styled.h2`
   justify-self: center;
   border-radius: 8px;
   box-shadow: 0 8px 16px #0006;
-  font-family: 'Roboto';
   font-size: 20px;
   color: white;
   background-image: linear-gradient(

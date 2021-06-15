@@ -30,7 +30,7 @@ const StyledNavLink = styled(NavLink)`
   padding: 12px;
   border: none;
   font-family: 'Roboto';
-  font-size: 20px;
+  font-size: 16px;
   color: white;
   background-image: linear-gradient(
     to top,
@@ -40,8 +40,8 @@ const StyledNavLink = styled(NavLink)`
     #a2b6df 100%
   );
   border-radius: 0;
-  width: 100%;
-  text-align: center;
+  width: 80%;
+  justify-self: center;
   cursor: pointer;
   text-decoration: none;
   box-shadow: 5px 5px 10px rgba(13, 13, 13, 0.2);
