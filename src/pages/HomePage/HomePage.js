@@ -32,10 +32,3 @@ const Image = styled.img`
   justify-content: center;
   gap: 20px;
 `
-const PageButtons = styled.section`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: 20px;
-`

@@ -8,7 +8,7 @@ SightseeingPage.propTypes = {
   onNavigate: PropTypes.func.isRequired,
 }
 
-export default function SightseeingPage({ onNavigate }) {
+export default function SightseeingPage() {
   return (
     <Wrapper>
       <Header>Sightseeing</Header>
