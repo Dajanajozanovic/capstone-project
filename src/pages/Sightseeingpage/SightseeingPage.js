@@ -1,9 +1,8 @@
 import PropTypes from 'prop-types'
-import Card from '../../components/Card/Card'
-import locations from '../../data.json'
 import styled from 'styled-components/macro'
+import Card from '../../components/Card/Card'
 import Header from '../../components/Header/Header'
-import Button from '../../components/Button/Button'
+import locations from '../../data.json'
 
 SightseeingPage.propTypes = {
   onNavigate: PropTypes.func.isRequired,
