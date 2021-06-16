@@ -1,13 +1,7 @@
 import styled from 'styled-components/macro'
 import Header from './../../components/Header/Header'
 
-import PropTypes from 'prop-types'
-
-HomePage.propTypes = {
-  onNavigate: PropTypes.func.isRequired,
-}
-
-export default function HomePage({ onNavigate }) {
+export default function HomePage() {
   return (
     <Wrapper>
       <Header>App title</Header>

@@ -1,9 +1,9 @@
+import { Route, Switch } from 'react-router-dom'
 import styled from 'styled-components'
-import HomePage from './pages/HomePage/HomePage'
-import Sightseeingpage from './pages/Sightseeingpage/SightseeingPage'
-import RestaurantPage from './pages/RestaurantPage/RestaurantPage'
-import { Switch, Route } from 'react-router-dom'
 import Navigation from './components/Navigation/Navigation'
+import HomePage from './pages/HomePage/HomePage'
+import RestaurantPage from './pages/RestaurantPage/RestaurantPage'
+import Sightseeingpage from './pages/Sightseeingpage/SightseeingPage'
 
 export default function App() {
   return (
