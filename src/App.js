@@ -1,20 +1,36 @@
-import styled from 'styled-components'
-import { useState } from 'react'
-import Sightseeingpage from './pages/Sightseeingpage/SightseeingPage'
+import { Route, Switch } from 'react-router-dom'
+import styled from 'styled-components/macro'
+import Navigation from './components/Navigation/Navigation'
+import HomePage from './pages/HomePage/HomePage'
 import RestaurantPage from './pages/RestaurantPage/RestaurantPage'
+import Sightseeingpage from './pages/Sightseeingpage/SightseeingPage'
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useState('sightseeingPage')
-
   return (
     <AppGrid>
-      {currentPage === 'sightseeingPage' && (
-        <Sightseeingpage onNavigate={() => setCurrentPage('restaurantPage')} />
-      )}
+      <Switch>
+        <Route exact path="/">
+          <HomePage />
+        </Route>
 
-      {currentPage === 'restaurantPage' && (
-        <RestaurantPage onNavigate={() => setCurrentPage('sightseeingPage')} />
-      )}
+        <Route path="/sightseeing">
+          <Sightseeingpage />
+        </Route>
+
+        <Route path="/restaurants">
+          <RestaurantPage />
+        </Route>
+      </Switch>
+
+      <Route exact path={['/', '/sightseeing', '/restaurants']}>
+        <Navigation
+          pages={[
+            { title: 'Homepage', path: '/' },
+            { title: 'Sightseeing', path: '/sightseeing' },
+            { title: 'Food & Drinks', path: '/restaurants' },
+          ]}
+        />
+      </Route>
     </AppGrid>
   )
 }

@@ -1,7 +1,7 @@
 import SightseeingPage from './SightseeingPage'
 
 export default {
-  title: 'SightseeingPage',
+  title: 'Pages/SightseeingPage',
   component: SightseeingPage,
 }
 

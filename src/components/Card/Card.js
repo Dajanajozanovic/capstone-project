@@ -28,11 +28,13 @@ export default function Card({
       <p>{text}</p>
 
       {isExpanded && (
-        <ul>
-          <li>{address}</li>
-          <li>{openingHours}</li>
-          <li>{entry}</li>
-        </ul>
+        <div>
+          {openingHours.map(openingHours => (
+            <p>{openingHours}</p>
+          ))}
+          <p>{address}</p>
+          <p>{entry}</p>
+        </div>
       )}
 
       <ButtonExpansion onClick={() => setIsExpanded(!isExpanded)}>
@@ -64,10 +66,6 @@ const WrapperCardList = styled.section`
   list-style-type: none;
   font-size: 16px;
   color: white;
-
-  li {
-    list-style-type: none;
-  }
 
   img {
     justify-self: center;
