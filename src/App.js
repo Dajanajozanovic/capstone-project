@@ -1,5 +1,5 @@
 import { Route, Switch } from 'react-router-dom'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 import Navigation from './components/Navigation/Navigation'
 import HomePage from './pages/HomePage/HomePage'
 import RestaurantPage from './pages/RestaurantPage/RestaurantPage'
@@ -10,15 +10,15 @@ export default function App() {
     <AppGrid>
       <Switch>
         <Route exact path="/">
-          <HomePage pageName="homepage" />
+          <HomePage />
         </Route>
 
         <Route path="/sightseeing">
-          <Sightseeingpage pageName="sightseeing" />
+          <Sightseeingpage />
         </Route>
 
         <Route path="/restaurants">
-          <RestaurantPage pageName="restaurants" />
+          <RestaurantPage />
         </Route>
       </Switch>
 

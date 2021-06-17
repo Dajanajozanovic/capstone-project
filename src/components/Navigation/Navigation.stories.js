@@ -1,5 +1,5 @@
 import Navigation from './Navigation'
-import { BrowserRouter } from 'react-router-dom'
+import { MemoryRouter } from 'react-router-dom'
 
 export default {
   title: 'Components/Navigation',
@@ -7,9 +7,9 @@ export default {
 }
 
 const Template = args => (
-  <BrowserRouter>
+  <MemoryRouter>
     <Navigation {...args} />
-  </BrowserRouter>
+  </MemoryRouter>
 )
 
 export const Default = Template.bind({})

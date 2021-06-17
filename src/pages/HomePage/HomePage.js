@@ -7,8 +7,14 @@ export default function HomePage() {
       <Header>App title</Header>
 
       <div>
-        <Image src="https://media-cdn.tripadvisor.com/media/photo-s/02/5a/ac/e6/ashoka.jpg" />
-        <Image src="https://www.handelsblatt.com/images/container-terminal-altenwerder/26116210/2-format2020.jpg" />
+        <Image
+          src="https://media-cdn.tripadvisor.com/media/photo-s/02/5a/ac/e6/ashoka.jpg"
+          alt=""
+        />
+        <Image
+          src="https://www.handelsblatt.com/images/container-terminal-altenwerder/26116210/2-format2020.jpg"
+          alt=""
+        />
       </div>
     </Wrapper>
   )
@@ -27,8 +33,5 @@ const Image = styled.img`
   height: 300px;
   margin: 20px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   gap: 20px;
 `

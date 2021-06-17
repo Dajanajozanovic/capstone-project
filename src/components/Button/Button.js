@@ -1,6 +1,16 @@
+import PropTypes from 'prop-types'
 import styled from 'styled-components/macro'
 
-const Button = styled.button`
+Button.propTypes = {
+  children: PropTypes.node,
+  onClick: PropTypes.func.isRequired,
+}
+
+export default function Button(props) {
+  return <ButtonStyled {...props} />
+}
+
+const ButtonStyled = styled.button`
   padding: 12px;
   border: none;
   font-family: 'Roboto';
@@ -15,6 +25,5 @@ const Button = styled.button`
     #6b8cce 100%,
     #a2b6df 100%
   );
-  box-shadow: 24px 24px 48px #656565, -24px -24px 48px #ffffff;
+  box-shadow: 4px 4px 8px #656565, -24px -24px 48px #ffffff;
 `
-export default Button

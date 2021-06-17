@@ -9,7 +9,6 @@ Navigation.propTypes = {
 }
 
 export default function Navigation({ pages }) {
-  console.log(pages)
   return (
     <Nav>
       {pages.map(({ title, path }) => (
@@ -39,7 +38,7 @@ const StyledNavLink = styled(NavLink)`
     #6b8cce 100%,
     #a2b6df 100%
   );
-  border-radius: 0;
+
   width: 80%;
   justify-self: center;
   cursor: pointer;
