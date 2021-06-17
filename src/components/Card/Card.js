@@ -25,15 +25,15 @@ export default function Card({
     <WrapperCardList>
       <img src={image} alt="" />
       <h2>{title}</h2>
-      <p>{text}</p>
 
       {isExpanded && (
         <div>
+          <p>{text}</p>
+          <p>{address}</p>
+          <p>{entry}</p>
           {openingHours.map(openingHours => (
             <p>{openingHours}</p>
           ))}
-          <p>{address}</p>
-          <p>{entry}</p>
         </div>
       )}
 
