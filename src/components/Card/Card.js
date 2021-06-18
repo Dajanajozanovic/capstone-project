@@ -1,6 +1,7 @@
 import styled from 'styled-components/macro'
 import { useState } from 'react'
 import PropTypes from 'prop-types'
+import Bookmarks from './../Bookmarks/Bookmarks'
 
 Card.propTypes = {
   image: PropTypes.node.isRequired,
@@ -22,29 +23,38 @@ export default function Card({
   const [isExpanded, setIsExpanded] = useState(false)
 
   return (
-    <WrapperCardList>
-      <img src={image} alt="" />
-      <h2>{title}</h2>
+    <>
+      <CardWrapper>
+        <Bookmarks />
+        <CardList>
+          <img src={image} alt="" />
+          <h2>{title}</h2>
 
-      {isExpanded && (
-        <div>
-          <p>{text}</p>
-          <p>{address}</p>
-          <p>{entry}</p>
-          {openingHours.map(openingHours => (
-            <p>{openingHours}</p>
-          ))}
-        </div>
-      )}
+          {isExpanded && (
+            <div>
+              <p>{text}</p>
+              <p>{address}</p>
+              <p>{entry}</p>
+              {openingHours.map(openingHours => (
+                <p>{openingHours}</p>
+              ))}
+            </div>
+          )}
 
-      <ButtonExpansion onClick={() => setIsExpanded(!isExpanded)}>
-        {isExpanded ? 'Hide details' : 'Show details'}
-      </ButtonExpansion>
-    </WrapperCardList>
+          <ButtonExpansion onClick={() => setIsExpanded(!isExpanded)}>
+            {isExpanded ? 'Hide details' : 'Show details'}
+          </ButtonExpansion>
+        </CardList>
+      </CardWrapper>
+    </>
   )
 }
 
-const WrapperCardList = styled.section`
+const CardWrapper = styled.section`
+  position: relative;
+`
+
+const CardList = styled.section`
   h2 {
     font-size: 25px;
   }
