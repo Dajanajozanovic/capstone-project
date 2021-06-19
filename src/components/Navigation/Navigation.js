@@ -44,4 +44,7 @@ const StyledNavLink = styled(NavLink)`
   cursor: pointer;
   text-decoration: none;
   box-shadow: 5px 5px 10px rgba(13, 13, 13, 0.2);
+  &:hover {
+    text-decoration: underline;
+  }
 `

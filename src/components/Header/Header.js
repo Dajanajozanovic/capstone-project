@@ -5,7 +5,7 @@ Header.propTypes = {
   children: PropTypes.node,
 }
 
-export default function Header({ children, uuid }) {
+export default function Header({ children }) {
   return <HeaderStyled>{children}</HeaderStyled>
 }
 
