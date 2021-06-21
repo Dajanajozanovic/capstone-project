@@ -14,11 +14,13 @@ export default function Bookmarks(props) {
   const [isBookmarked, setIsBookmarked] = useState(false)
   return (
     <BookmarkStyled {...props}>
-      <img
-        src={isBookmarked ? bookmarkActive : bookmarkInactive}
-        alt=""
-        onClick={() => setIsBookmarked(!isBookmarked)}
-      />
+      <button>
+        <img
+          src={isBookmarked ? bookmarkActive : bookmarkInactive}
+          alt=""
+          onClick={() => setIsBookmarked(!isBookmarked)}
+        />
+      </button>
     </BookmarkStyled>
   )
 }

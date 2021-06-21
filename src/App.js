@@ -33,8 +33,8 @@ export default function App() {
           pages={[
             { title: 'Homepage', path: '/' },
             { title: 'Sightseeing', path: '/sightseeing' },
-            { title: 'Food & Drinks', path: '/restaurants' },
-            { title: 'My Favorites', path: '/myfavorites' },
+            { title: 'Food&Drinks', path: '/restaurants' },
+            { title: 'Favorites', path: '/myfavorites' },
           ]}
         />
       </Route>
