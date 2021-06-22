@@ -13,19 +13,26 @@ Card.propTypes = {
 }
 
 export default function Card({
+  id,
   text,
   title,
   image,
   address,
   openingHours,
   entry,
+  handleBookmark,
+  isFavorite,
 }) {
   const [isExpanded, setIsExpanded] = useState(false)
 
   return (
     <>
       <CardWrapper>
-        <Bookmarks />
+        <Bookmarks
+          isBookmarked={isFavorite}
+          aria-label=""
+          onClick={() => handleBookmark(id)}
+        />
         <CardList>
           <img src={image} alt="" />
           <h2>{title}</h2>

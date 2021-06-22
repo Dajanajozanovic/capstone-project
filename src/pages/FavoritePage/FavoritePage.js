@@ -3,20 +3,41 @@ import { useHistory } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import Button from './../../components/Button/Button'
 import Header from './../../components/Header/Header'
+import Card from './../../components/Card/Card'
 
 FavoritePage.propTypes = {
   history: PropTypes.func.isRequired,
+  handleBookmark: PropTypes.func,
 }
 
-export default function FavoritePage() {
+export default function FavoritePage({ favorites, handleBookmark }) {
   let history = useHistory()
+
   return (
     <>
       <div>
         <BackButton onClick={() => history.goBack()}>&lt; back</BackButton>
       </div>
       <Header>My Favorites</Header>
-      <Wrapper></Wrapper>
+      <Wrapper>
+        {favorites.map(
+          ({ id, image, title, text, address, openingHours, entry }) => {
+            return (
+              <Card
+                id={id}
+                key={id}
+                image={image}
+                title={title}
+                text={text}
+                address={address}
+                openingHours={openingHours}
+                entry={entry}
+                handleBookmark={handleBookmark}
+              />
+            )
+          }
+        )}
+      </Wrapper>
     </>
   )
 }

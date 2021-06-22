@@ -8,12 +8,13 @@ RestaurantPage.propTypes = {
   onNavigate: PropTypes.func.isRequired,
 }
 
-export default function RestaurantPage() {
+export default function RestaurantPage({ handleBookmark, restaurants }) {
   return (
     <Wrapper>
       <Header>Food and Drinks</Header>
+
       <ListWrapper>
-        {locations.restaurants.map(restaurant => {
+        {restaurants.map(restaurant => {
           const {
             id,
             image,
@@ -25,6 +26,7 @@ export default function RestaurantPage() {
           } = restaurant
           return (
             <Card
+              id={id}
               key={id}
               image={image}
               title={title}
@@ -32,6 +34,7 @@ export default function RestaurantPage() {
               address={address}
               openingHours={openingHours}
               entry={entry}
+              handleBookmark={handleBookmark}
             />
           )
         })}

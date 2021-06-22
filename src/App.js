@@ -1,3 +1,6 @@
+import { useState, useEffect } from 'react'
+import { loadFromLocal, saveToLocal } from './utils/localStorage'
+import locationsData from './locations.json'
 import { Route, Switch } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import Navigation from './components/Navigation/Navigation'
@@ -5,9 +8,23 @@ import HomePage from './pages/HomePage/HomePage'
 import RestaurantPage from './pages/RestaurantPage/RestaurantPage'
 import Sightseeingpage from './pages/Sightseeingpage/SightseeingPage'
 import FavoritePage from './pages/FavoritePage/FavoritePage'
-import { useHistory } from 'react-router-dom'
 
 export default function App() {
+  const [locations, setLocations] = useState(
+    loadFromLocal('locations') ?? locationsData
+  )
+  const restaurants = locations.filter(
+    location => location.type === 'restaurant'
+  )
+  const sightseeing = locations.filter(
+    location => location.type === 'sightseeing'
+  )
+  const favorites = locations.filter(location => location.isFavorite)
+
+  useEffect(() => {
+    saveToLocal('locations', locations)
+  }, [locations])
+
   return (
     <AppGrid>
       <Switch>
@@ -16,15 +33,21 @@ export default function App() {
         </Route>
 
         <Route path="/sightseeing">
-          <Sightseeingpage />
+          <Sightseeingpage
+            sightseeing={sightseeing}
+            handleBookmark={handleBookmark}
+          />
         </Route>
 
         <Route path="/restaurants">
-          <RestaurantPage />
+          <RestaurantPage
+            restaurants={restaurants}
+            handleBookmark={handleBookmark}
+          />
         </Route>
 
         <Route path="/myfavorites">
-          <FavoritePage />
+          <FavoritePage favorites={favorites} handleBookmark={handleBookmark} />
         </Route>
       </Switch>
 
@@ -40,6 +63,16 @@ export default function App() {
       </Route>
     </AppGrid>
   )
+
+  function handleBookmark(id) {
+    const index = locations.findIndex(location => location.id === id)
+    const location = locations[index]
+    setLocations([
+      ...locations.slice(0, index),
+      { ...location, isFavorite: !location.isFavorite },
+      ...locations.slice(index + 1),
+    ])
+  }
 }
 
 const AppGrid = styled.div`
