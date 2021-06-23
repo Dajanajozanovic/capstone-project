@@ -56,7 +56,7 @@ const BackButton = styled(Button)`
   text-align: center;
   left: -1em;
   top: 0em;
-  font-family: 'Roboto';
+
   font-size: 16px;
   width: 100px;
   height: 40px;
