@@ -24,6 +24,9 @@ const Wrapper = styled.section`
   height: 100vh;
   display: grid;
   justify-items: center;
+  section:last-child {
+    margin-bottom: 20px;
+  }
 `
 
 const Image = styled.img`

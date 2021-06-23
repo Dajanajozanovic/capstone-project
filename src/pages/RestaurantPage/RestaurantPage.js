@@ -38,4 +38,7 @@ const ListWrapper = styled.ul`
   display: grid;
   gap: 10px;
   padding: 5px;
+  section:last-child {
+    margin-bottom: 20px;
+  }
 `
