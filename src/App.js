@@ -85,11 +85,10 @@ export default function App() {
 }
 
 const AppGrid = styled.div`
-  display: grid;
+  /* display: grid;
   justify-content: center;
   grid-template-rows: auto min-content;
   height: 100%;
   width: 100%;
-  overflow-x: hidden;
-  gap: 20px;
+  overflow-x: hidden; */
 `

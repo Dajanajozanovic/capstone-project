@@ -20,11 +20,10 @@ export default function HomePage() {
 }
 
 const Wrapper = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  justify-items: center;
 `
 
 const Image = styled.img`
@@ -32,5 +31,4 @@ const Image = styled.img`
   height: 300px;
   margin: 20px;
   display: flex;
-  gap: 20px;
 `

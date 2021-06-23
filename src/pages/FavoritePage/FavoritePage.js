@@ -1,7 +1,5 @@
 import PropTypes from 'prop-types'
-import { useHistory } from 'react-router-dom'
 import styled from 'styled-components/macro'
-import Button from './../../components/Button/Button'
 import Header from './../../components/Header/Header'
 import Card from './../../components/Card/Card'
 
@@ -48,7 +46,6 @@ const Wrapper = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 20px;
   section:last-child {
     margin-bottom: 20px;
   }
