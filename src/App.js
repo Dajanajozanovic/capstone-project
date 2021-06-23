@@ -8,6 +8,7 @@ import HomePage from './pages/HomePage/HomePage'
 import RestaurantPage from './pages/RestaurantPage/RestaurantPage'
 import Sightseeingpage from './pages/Sightseeingpage/SightseeingPage'
 import FavoritePage from './pages/FavoritePage/FavoritePage'
+import produce from 'immer'
 
 export default function App() {
   const [locations, setLocations] = useState(
@@ -65,13 +66,21 @@ export default function App() {
   )
 
   function handleBookmark(id) {
-    const index = locations.findIndex(location => location.id === id)
-    const location = locations[index]
-    setLocations([
-      ...locations.slice(0, index),
-      { ...location, isFavorite: !location.isFavorite },
-      ...locations.slice(index + 1),
-    ])
+    // const index = locations.findIndex(location => location.id === id)
+    // const location = locations[index]
+
+    const nextState = produce(locations, draftState => {
+      const location = draftState.find(location => location.id === id)
+      location.isFavorite = !location.isFavorite
+    })
+
+    setLocations(nextState)
+
+    // setLocations([
+    //   ...locations.slice(0, index),
+    //   { ...location, isFavorite: !location.isFavorite },
+    //   ...locations.slice(index + 1),
+    // ])
   }
 }
 
