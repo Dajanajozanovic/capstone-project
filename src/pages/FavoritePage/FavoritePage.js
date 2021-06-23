@@ -8,6 +8,7 @@ import Card from './../../components/Card/Card'
 FavoritePage.propTypes = {
   history: PropTypes.func.isRequired,
   handleBookmark: PropTypes.func,
+  onClick: PropTypes.func,
 }
 
 export default function FavoritePage({ favorites, handleBookmark }) {
@@ -43,12 +44,11 @@ export default function FavoritePage({ favorites, handleBookmark }) {
 }
 
 const Wrapper = styled.section`
-  display: grid;
-  justify-items: center;
-  max-width: 600px;
-  padding: 10px;
-  color: whitesmoke;
-  font-family: 'Roboto';
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 `
 const BackButton = styled(Button)`
   background: grey;

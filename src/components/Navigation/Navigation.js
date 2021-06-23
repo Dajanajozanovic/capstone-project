@@ -1,62 +1,6 @@
-// import styled from 'styled-components/macro'
-// import { NavLink } from 'react-router-dom'
-
-// export default function NavBar() {
-//   const active = {
-//     fontWeight: '700',
-//     backgroundColor: 'darkgrey',
-//   }
-
-//   return (
-//     <NavBarWrapper>
-//       <StyledLink to="/" activeStyle={active}>
-//         Home
-//       </StyledLink>
-//       <StyledLink to="/sightseeing" activeStyle={active}>
-//         Sightseeing
-//       </StyledLink>
-//       <StyledLink to="/restaurants" activeStyle={active}>
-//         Food and Drinks
-//       </StyledLink>
-//       <StyledLink to="/myfavorites" activeStyle={active}>
-//         My favorites
-//       </StyledLink>
-//     </NavBarWrapper>
-//   )
-// }
-
-// const NavBarWrapper = styled.ul`
-//   display: flex;
-//   width: 330px;
-//   position: fixed;
-//   bottom: 0;
-//   margin: 0 20px 20px;
-//   padding-left: 0;
-//   justify-content: space-around;
-//   justify-self: center;
-//   align-items: center;
-//   list-style: none;
-//   transform: translateX(-20px);
-// `
-
-// const StyledLink = styled(NavLink)`
-//   display: flex;
-//   text-align: center;
-//   align-items: center;
-//   justify-content: space-around;
-//   height: 60px;
-//   width: 100%;
-//   text-decoration: none;
-//   border-style: none;
-//   font-weight: 400;
-
-//   background-color: #cccccc;
-//   color: #f6f6f6;
-//   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
-
-import styled from 'styled-components/macro'
 import PropTypes from 'prop-types'
 import { NavLink } from 'react-router-dom'
+import styled from 'styled-components/macro'
 
 Navigation.propTypes = {
   pages: PropTypes.arrayOf(
