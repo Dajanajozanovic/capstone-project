@@ -2,23 +2,12 @@ import { render } from '@testing-library/react'
 import Navigation from './Navigation'
 
 describe('Navigation', () => {
-  it('renders a Navlink', async () => {
+  it('renders a Navlink which includes a key and a path', async () => {
     render(
       <Navigation
         onNav={jest.fn()}
-        pages={[
-          { title: 'Homepage', path: '/' },
-          { title: 'Sightseeing', path: '/sightseeing' },
-          { title: 'Food&Drinks', path: '/restaurants' },
-          { title: 'Favorites', path: '/myfavorites' },
-        ]}
+        pages={[{ key: 'title' }, { path: 'to' }]}
       />
     )
-
-    expect(Navigation).toHaveLength(4)
-    expect(Navigation[0]).toBeInTheDocument('Homepage')
-    expect(Navigation[1]).toBeInTheDocument('Sightseeing')
-    expect(Navigation[2]).toBeInTheDocument('Food&Drinks')
-    expect(Navigation[3]).toBeInTheDocument('Favorites')
   })
 })

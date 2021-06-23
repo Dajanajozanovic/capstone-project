@@ -12,15 +12,10 @@ FavoritePage.propTypes = {
 }
 
 export default function FavoritePage({ favorites, handleBookmark }) {
-  let history = useHistory()
-
   return (
-    <>
-      <div>
-        <BackButton onClick={() => history.goBack()}>&lt; back</BackButton>
-      </div>
-      <Header>My Favorites</Header>
+    <Container>
       <Wrapper>
+        <Header>My Favorites</Header>
         {favorites.map(
           ({ id, image, title, text, address, openingHours, entry }) => {
             return (
@@ -39,9 +34,14 @@ export default function FavoritePage({ favorites, handleBookmark }) {
           }
         )}
       </Wrapper>
-    </>
+    </Container>
   )
 }
+
+const Container = styled.div`
+  height: 100vh;
+  width: 100vw;
+`
 
 const Wrapper = styled.section`
   display: flex;
@@ -49,16 +49,7 @@ const Wrapper = styled.section`
   align-items: center;
   justify-content: center;
   gap: 20px;
-`
-const BackButton = styled(Button)`
-  background: grey;
-  position: absolute;
-  text-align: center;
-  left: -1em;
-  top: 0em;
-
-  font-size: 16px;
-  width: 100px;
-  height: 40px;
-  margin: 20px;
+  section:last-child {
+    margin-bottom: 20px;
+  }
 `

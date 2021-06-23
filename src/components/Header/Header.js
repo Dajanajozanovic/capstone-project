@@ -10,26 +10,20 @@ export default function Header({ children }) {
 }
 
 const HeaderStyled = styled.h2`
+  position: sticky;
+  top: 0;
+  z-index: 1;
   display: grid;
   width: 100%;
   place-items: center;
-  font-family: 'Roboto';
   margin: 0;
   font-size: 1.2em;
   font-weight: 500;
   padding: 20px;
   justify-self: center;
-  border-radius: 8px;
   box-shadow: 0 8px 16px #0006;
   font-size: 20px;
-  color: white;
-  background-image: linear-gradient(
-    to top,
-    #0c3483 0%,
-    #a2b6df 100%,
-    #6b8cce 100%,
-    #a2b6df 100%
-  );
-  box-shadow: 24px 24px 48px #656565, -24px -24px 48px #ffffff;
-  border-radius: 31px;
+  color: grey;
+  box-shadow: 3px 3px 8px #656565, -24px -24px 48px #ffffff;
+  background-color: whitesmoke;
 `

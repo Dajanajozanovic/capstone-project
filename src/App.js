@@ -55,7 +55,7 @@ export default function App() {
       <Route exact path={['/', '/sightseeing', '/restaurants', '/myfavorites']}>
         <Navigation
           pages={[
-            { title: 'Homepage', path: '/' },
+            { title: 'Home', path: '/' },
             { title: 'Sightseeing', path: '/sightseeing' },
             { title: 'Food&Drinks', path: '/restaurants' },
             { title: 'Favorites', path: '/myfavorites' },

@@ -5,7 +5,6 @@ export default function HomePage() {
   return (
     <Wrapper>
       <Header>App title</Header>
-
       <div>
         <Image
           src="https://media-cdn.tripadvisor.com/media/photo-s/02/5a/ac/e6/ashoka.jpg"

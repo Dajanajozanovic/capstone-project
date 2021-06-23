@@ -24,8 +24,8 @@ export default function Bookmarks({ isBookmarked, onClick, ...props }) {
 const BookmarkStyled = styled.div`
   img {
     position: absolute;
-    top: -10px;
-    right: -5px;
+    top: 15px;
+    right: 10px;
     width: 40px;
     height: 40px;
     cursor: pointer;
