@@ -27,18 +27,9 @@ export default function RestaurantPage({ handleBookmark, restaurants }) {
 }
 
 const Wrapper = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
+  display: grid;
+  overflow-y: auto;
 `
 const ListWrapper = styled.ul`
-  list-style-type: none;
-  display: grid;
-  gap: 10px;
-  padding: 5px;
-  section:last-child {
-    margin-bottom: 20px;
-  }
+  padding: 0;
 `

@@ -11,9 +11,9 @@ FavoritePage.propTypes = {
 
 export default function FavoritePage({ favorites, handleBookmark }) {
   return (
-    <Container>
-      <Wrapper>
-        <Header>My Favorites</Header>
+    <Wrapper>
+      <Header>My Favorites</Header>
+      <ListWrapper>
         {favorites.map(
           ({ id, image, title, text, address, openingHours, entry }) => {
             return (
@@ -27,26 +27,20 @@ export default function FavoritePage({ favorites, handleBookmark }) {
                 openingHours={openingHours}
                 entry={entry}
                 handleBookmark={handleBookmark}
+                isFavorite={true}
               />
             )
           }
         )}
-      </Wrapper>
-    </Container>
+      </ListWrapper>
+    </Wrapper>
   )
 }
 
-const Container = styled.div`
-  height: 100vh;
-  width: 100vw;
-`
-
 const Wrapper = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  section:last-child {
-    margin-bottom: 20px;
-  }
+  display: grid;
+  overflow-y: auto;
+`
+const ListWrapper = styled.ul`
+  padding: 0;
 `

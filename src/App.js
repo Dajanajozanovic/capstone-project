@@ -76,4 +76,9 @@ export default function App() {
   }
 }
 
-const AppGrid = styled.div``
+const AppGrid = styled.div`
+  display: grid;
+  grid-template-rows: auto 4rem;
+  width: 100vw;
+  height: 100vh;
+`

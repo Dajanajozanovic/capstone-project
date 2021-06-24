@@ -75,8 +75,8 @@ const CardList = styled.section`
   display: grid;
   max-width: 100%;
   list-style-type: none;
-  color: grey;
-  background-color: transparent;
+  color: dimgrey;
+  background-color: rgba(0, 180, 255, 0.5);
 
   img {
     width: 90%;

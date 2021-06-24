@@ -21,6 +21,7 @@ export default function Navigation({ pages }) {
 }
 
 const Nav = styled.nav`
+  height: 4rem;
   background-color: whitesmoke;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;

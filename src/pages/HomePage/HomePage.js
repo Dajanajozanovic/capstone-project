@@ -20,18 +20,7 @@ export default function HomePage() {
 }
 
 const Wrapper = styled.section`
-  width: 100vw;
-  height: 100vh;
-  display: grid;
-  justify-items: center;
-  section:last-child {
-    margin-bottom: 20px;
-  }
+  overflow-y: auto;
 `
 
-const Image = styled.img`
-  width: 300px;
-  height: 300px;
-  margin: 20px;
-  display: flex;
-`
+const Image = styled.img``
