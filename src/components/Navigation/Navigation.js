@@ -12,7 +12,12 @@ export default function Navigation({ pages }) {
   return (
     <Nav>
       {pages.map(({ title, path }) => (
-        <StyledNavLink key={title} to={path}>
+        <StyledNavLink
+          activeStyle={{ backgroundColor: 'lightpink', fontWeight: 'bold' }}
+          key={title}
+          exact
+          to={path}
+        >
           {title}
         </StyledNavLink>
       ))}
@@ -25,8 +30,6 @@ const Nav = styled.nav`
   background-color: whitesmoke;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  position: fixed;
-  bottom: 0;
   justify-items: center;
 `
 

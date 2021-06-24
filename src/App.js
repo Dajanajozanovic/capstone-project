@@ -21,6 +21,13 @@ export default function App() {
   )
   const favorites = locations.filter(location => location.isFavorite)
 
+  const pages = [
+    { title: 'Home', path: '/' },
+    { title: 'Sightseeing', path: '/sightseeing' },
+    { title: 'Food & Drinks', path: '/restaurants' },
+    { title: 'Favorites', path: '/myfavorites' },
+  ]
+
   useEffect(() => {
     saveToLocal('locations', locations)
   }, [locations])
@@ -29,7 +36,7 @@ export default function App() {
     <AppGrid>
       <Switch>
         <Route exact path="/">
-          <HomePage />
+          <HomePage pages={pages} />
         </Route>
 
         <Route path="/sightseeing">
@@ -51,15 +58,8 @@ export default function App() {
         </Route>
       </Switch>
 
-      <Route exact path={['/', '/sightseeing', '/restaurants', '/myfavorites']}>
-        <Navigation
-          pages={[
-            { title: 'Home', path: '/' },
-            { title: 'Sightseeing', path: '/sightseeing' },
-            { title: 'Food&Drinks', path: '/restaurants' },
-            { title: 'Favorites', path: '/myfavorites' },
-          ]}
-        />
+      <Route exact path={['/sightseeing', '/restaurants', '/myfavorites']}>
+        <Navigation pages={pages} />
       </Route>
     </AppGrid>
   )
