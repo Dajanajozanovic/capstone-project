@@ -13,7 +13,5 @@ describe('Card', () => {
     expect(
       screen.getByRole('heading', { name: 'Elbphilharmonie' })
     ).toBeInTheDocument()
-    const image = screen.getAllByRole('img')
-    expect(image).toHaveLength(1)
   })
 })

@@ -1,6 +1,7 @@
 import styled from 'styled-components/macro'
 import { useState } from 'react'
 import PropTypes from 'prop-types'
+import Bookmarks from './../Bookmarks/Bookmarks'
 
 Card.propTypes = {
   image: PropTypes.node.isRequired,
@@ -12,63 +13,72 @@ Card.propTypes = {
 }
 
 export default function Card({
+  id,
   text,
   title,
   image,
   address,
   openingHours,
   entry,
+  handleBookmark,
+  isFavorite,
 }) {
   const [isExpanded, setIsExpanded] = useState(false)
 
   return (
-    <WrapperCardList>
-      <img src={image} alt="" />
-      <h2>{title}</h2>
+    <>
+      <CardWrapper>
+        <Bookmarks
+          isBookmarked={isFavorite}
+          aria-label=""
+          onClick={() => handleBookmark(id)}
+        />
+        <CardList>
+          <img src={image} alt="" />
+          <h2>{title}</h2>
 
-      {isExpanded && (
-        <div>
-          <p>{text}</p>
-          <p>{address}</p>
-          <p>{entry}</p>
-          {openingHours.map(openingHours => (
-            <p>{openingHours}</p>
-          ))}
-        </div>
-      )}
+          {isExpanded && (
+            <div>
+              <p>{text}</p>
+              <p>{address}</p>
+              <p>{entry}</p>
+              {openingHours.map(openingHours => (
+                <p>{openingHours}</p>
+              ))}
+            </div>
+          )}
 
-      <ButtonExpansion onClick={() => setIsExpanded(!isExpanded)}>
-        {isExpanded ? 'Hide details' : 'Show details'}
-      </ButtonExpansion>
-    </WrapperCardList>
+          <ButtonExpansion onClick={() => setIsExpanded(!isExpanded)}>
+            {isExpanded ? 'Hide details' : 'Show details'}
+          </ButtonExpansion>
+        </CardList>
+      </CardWrapper>
+    </>
   )
 }
 
-const WrapperCardList = styled.section`
+const CardWrapper = styled.section`
+  position: relative;
+  padding: 20px;
+`
+
+const CardList = styled.section`
   h2 {
     font-size: 25px;
+    text-align: center;
   }
-
-  background-image: linear-gradient(
-    to top,
-    #0c3483 0%,
-    #a2b6df 100%,
-    #6b8cce 100%,
-    #a2b6df 100%
-  );
   padding: 20px;
+  justify-items: center;
   align-items: center;
   border-radius: 8px;
   box-shadow: 0 8px 16px #0006;
   display: grid;
   max-width: 100%;
-  font-family: 'Roboto';
   list-style-type: none;
-  font-size: 16px;
-  color: white;
+  color: grey;
+  background-color: transparent;
 
   img {
-    justify-self: center;
     width: 90%;
     max-width: 600px;
     margin: 10px;
@@ -81,4 +91,5 @@ const ButtonExpansion = styled.button`
   display: grid;
   padding: 8px;
   border-radius: none;
+  width: 80%;
 `

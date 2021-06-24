@@ -2,36 +2,22 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components/macro'
 import Card from './../../components/Card/Card'
 import Header from './../../components/Header/Header'
-import locations from './../../locations.json'
 
 RestaurantPage.propTypes = {
   onNavigate: PropTypes.func.isRequired,
 }
 
-export default function RestaurantPage() {
+export default function RestaurantPage({ handleBookmark, restaurants }) {
   return (
     <Wrapper>
       <Header>Food and Drinks</Header>
       <ListWrapper>
-        {locations.restaurants.map(restaurant => {
-          const {
-            id,
-            image,
-            title,
-            text,
-            address,
-            openingHours,
-            entry,
-          } = restaurant
+        {restaurants.map(restaurants => {
           return (
             <Card
-              key={id}
-              image={image}
-              title={title}
-              text={text}
-              address={address}
-              openingHours={openingHours}
-              entry={entry}
+              key={restaurants.id}
+              handleBookmark={handleBookmark}
+              {...restaurants}
             />
           )
         })}
@@ -52,4 +38,7 @@ const ListWrapper = styled.ul`
   display: grid;
   gap: 10px;
   padding: 5px;
+  section:last-child {
+    margin-bottom: 20px;
+  }
 `

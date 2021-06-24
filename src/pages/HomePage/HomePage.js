@@ -5,7 +5,6 @@ export default function HomePage() {
   return (
     <Wrapper>
       <Header>App title</Header>
-
       <div>
         <Image
           src="https://media-cdn.tripadvisor.com/media/photo-s/02/5a/ac/e6/ashoka.jpg"
@@ -21,11 +20,13 @@ export default function HomePage() {
 }
 
 const Wrapper = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  justify-items: center;
+  section:last-child {
+    margin-bottom: 20px;
+  }
 `
 
 const Image = styled.img`
@@ -33,5 +34,4 @@ const Image = styled.img`
   height: 300px;
   margin: 20px;
   display: flex;
-  gap: 20px;
 `
