@@ -14,24 +14,26 @@ export default function FavoritePage({ favorites, handleBookmark }) {
     <Wrapper>
       <Header>My Favorites</Header>
       <ListWrapper>
-        {favorites.map(
-          ({ id, image, title, text, address, openingHours, entry }) => {
-            return (
-              <Card
-                id={id}
-                key={id}
-                image={image}
-                title={title}
-                text={text}
-                address={address}
-                openingHours={openingHours}
-                entry={entry}
-                handleBookmark={handleBookmark}
-                isFavorite={true}
-              />
+        {favorites.length > 0
+          ? favorites.map(
+              ({ id, image, title, text, address, openingHours, entry }) => {
+                return (
+                  <Card
+                    id={id}
+                    key={id}
+                    image={image}
+                    title={title}
+                    text={text}
+                    address={address}
+                    openingHours={openingHours}
+                    entry={entry}
+                    handleBookmark={handleBookmark}
+                    isFavorite={true}
+                  />
+                )
+              }
             )
-          }
-        )}
+          : "You don't have any favorite Locations."}
       </ListWrapper>
     </Wrapper>
   )
@@ -43,4 +45,7 @@ const Wrapper = styled.section`
 `
 const ListWrapper = styled.ul`
   padding: 0;
+  font-size: 20px;
+  color: grey;
+  justify-self: center;
 `
