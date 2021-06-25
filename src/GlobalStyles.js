@@ -10,6 +10,5 @@ body {
     font-family: 'Roboto', sans-serif;
     color: black;
     overflow-x: hidden;
-    font-size: 16px;
 }
 `

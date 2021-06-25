@@ -13,7 +13,7 @@ export default function Navigation({ pages }) {
     <Nav>
       {pages.map(({ title, path }) => (
         <StyledNavLink
-          activeStyle={{ backgroundColor: 'lightpink', fontWeight: 'bold' }}
+          activeStyle={{ backgroundColor: 'lightpink' }}
           key={title}
           exact
           to={path}

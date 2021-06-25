@@ -1,13 +1,12 @@
-import { useState, useEffect } from 'react'
-import { loadFromLocal, saveToLocal } from './utils/localStorage'
-import locationsData from './locations.json'
+import { useEffect, useState } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import Navigation from './components/Navigation/Navigation'
-import HomePage from './pages/HomePage/HomePage'
-import RestaurantPage from './pages/RestaurantPage/RestaurantPage'
-import Sightseeingpage from './pages/Sightseeingpage/SightseeingPage'
+import locationsData from './locations.json'
 import FavoritePage from './pages/FavoritePage/FavoritePage'
+import HomePage from './pages/HomePage/HomePage'
+import LocationsPage from './pages/LocationsPage/LocationsPage'
+import { loadFromLocal, saveToLocal } from './utils/localStorage'
 
 export default function App() {
   const [locations, setLocations] = useState(
@@ -40,15 +39,17 @@ export default function App() {
         </Route>
 
         <Route path="/sightseeing">
-          <Sightseeingpage
-            sightseeing={sightseeing}
+          <LocationsPage
+            title="Sightseeing"
+            locations={sightseeing}
             handleBookmark={handleBookmark}
           />
         </Route>
 
         <Route path="/restaurants">
-          <RestaurantPage
-            restaurants={restaurants}
+          <LocationsPage
+            title="Food and Drinks"
+            locations={restaurants}
             handleBookmark={handleBookmark}
           />
         </Route>

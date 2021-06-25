@@ -26,34 +26,32 @@ export default function Card({
   const [isExpanded, setIsExpanded] = useState(false)
 
   return (
-    <>
-      <CardWrapper>
-        <Bookmarks
-          isBookmarked={isFavorite}
-          aria-label=""
-          onClick={() => handleBookmark(id)}
-        />
-        <CardList>
-          <img src={image} alt="" />
-          <h2>{title}</h2>
+    <CardWrapper>
+      <Bookmarks
+        isBookmarked={isFavorite}
+        aria-label=""
+        onClick={() => handleBookmark(id)}
+      />
+      <CardList>
+        <img src={image} alt="" />
+        <h2>{title}</h2>
 
-          {isExpanded && (
-            <div>
-              <p>{text}</p>
-              <p>{address}</p>
-              <p>{entry}</p>
-              {openingHours.map(openingHours => (
-                <p>{openingHours}</p>
-              ))}
-            </div>
-          )}
+        {isExpanded && (
+          <div>
+            <p>{text}</p>
+            <p>{address}</p>
+            <p>{entry}</p>
+            {openingHours.map(openingHours => (
+              <p>{openingHours}</p>
+            ))}
+          </div>
+        )}
 
-          <ButtonExpansion onClick={() => setIsExpanded(!isExpanded)}>
-            {isExpanded ? 'Hide details' : 'Show details'}
-          </ButtonExpansion>
-        </CardList>
-      </CardWrapper>
-    </>
+        <ButtonExpansion onClick={() => setIsExpanded(!isExpanded)}>
+          {isExpanded ? 'Hide details' : 'Show details'}
+        </ButtonExpansion>
+      </CardList>
+    </CardWrapper>
   )
 }
 

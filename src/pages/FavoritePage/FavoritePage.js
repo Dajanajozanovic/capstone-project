@@ -13,14 +13,15 @@ export default function FavoritePage({ favorites, handleBookmark }) {
   return (
     <Wrapper>
       <Header>My Favorites</Header>
-      <ListWrapper>
-        {favorites.length > 0
-          ? favorites.map(
-              ({ id, image, title, text, address, openingHours, entry }) => {
-                return (
+
+      {favorites.length > 0 ? (
+        <ListWrapper>
+          {favorites.map(
+            ({ id, image, title, text, address, openingHours, entry }) => {
+              return (
+                <li key={id}>
                   <Card
                     id={id}
-                    key={id}
                     image={image}
                     title={title}
                     text={text}
@@ -30,11 +31,14 @@ export default function FavoritePage({ favorites, handleBookmark }) {
                     handleBookmark={handleBookmark}
                     isFavorite={true}
                   />
-                )
-              }
-            )
-          : "You don't have any favorite Locations."}
-      </ListWrapper>
+                </li>
+              )
+            }
+          )}
+        </ListWrapper>
+      ) : (
+        "You don't have any favorite Locations."
+      )}
     </Wrapper>
   )
 }
@@ -42,6 +46,8 @@ export default function FavoritePage({ favorites, handleBookmark }) {
 const Wrapper = styled.section`
   display: grid;
   overflow-y: auto;
+  color: dimgrey;
+  justify-items: center;
 `
 const ListWrapper = styled.ul`
   padding: 0;
