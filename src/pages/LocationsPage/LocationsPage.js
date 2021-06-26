@@ -3,21 +3,21 @@ import styled from 'styled-components/macro'
 import Card from '../../components/Card/Card'
 import Header from '../../components/Header/Header'
 
-SightseeingPage.propTypes = {
+LocationsPage.propTypes = {
   onNavigate: PropTypes.func.isRequired,
 }
 
-export default function SightseeingPage({ handleBookmark, sightseeing }) {
+export default function LocationsPage({ handleBookmark, locations, title }) {
   return (
     <Wrapper>
-      <Header>Sightseeing</Header>
+      <Header>{title}</Header>
       <ListWrapper>
-        {sightseeing.map(sightseeing => {
+        {locations.map(location => {
           return (
             <Card
-              key={sightseeing.id}
+              key={location.id}
               handleBookmark={handleBookmark}
-              {...sightseeing}
+              {...location}
             />
           )
         })}
@@ -26,18 +26,9 @@ export default function SightseeingPage({ handleBookmark, sightseeing }) {
   )
 }
 const Wrapper = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
+  display: grid;
+  overflow-y: auto;
 `
 const ListWrapper = styled.ul`
-  list-style-type: none;
-  display: grid;
-  gap: 10px;
-  padding: 5px;
-  section:last-child {
-    margin-bottom: 20px;
-  }
+  padding: 0;
 `

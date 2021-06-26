@@ -11,42 +11,47 @@ FavoritePage.propTypes = {
 
 export default function FavoritePage({ favorites, handleBookmark }) {
   return (
-    <Container>
-      <Wrapper>
-        <Header>My Favorites</Header>
-        {favorites.map(
-          ({ id, image, title, text, address, openingHours, entry }) => {
-            return (
-              <Card
-                id={id}
-                key={id}
-                image={image}
-                title={title}
-                text={text}
-                address={address}
-                openingHours={openingHours}
-                entry={entry}
-                handleBookmark={handleBookmark}
-              />
-            )
-          }
-        )}
-      </Wrapper>
-    </Container>
+    <Wrapper>
+      <Header>My Favorites</Header>
+
+      {favorites.length > 0 ? (
+        <ListWrapper>
+          {favorites.map(
+            ({ id, image, title, text, address, openingHours, entry }) => {
+              return (
+                <li key={id}>
+                  <Card
+                    id={id}
+                    image={image}
+                    title={title}
+                    text={text}
+                    address={address}
+                    openingHours={openingHours}
+                    entry={entry}
+                    handleBookmark={handleBookmark}
+                    isFavorite={true}
+                  />
+                </li>
+              )
+            }
+          )}
+        </ListWrapper>
+      ) : (
+        "You don't have any favorite Locations."
+      )}
+    </Wrapper>
   )
 }
 
-const Container = styled.div`
-  height: 100vh;
-  width: 100vw;
-`
-
 const Wrapper = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  section:last-child {
-    margin-bottom: 20px;
-  }
+  display: grid;
+  overflow-y: auto;
+  color: dimgrey;
+  justify-items: center;
+`
+const ListWrapper = styled.ul`
+  padding: 0;
+  font-size: 20px;
+  color: grey;
+  justify-self: center;
 `

@@ -15,6 +15,7 @@ const HeaderStyled = styled.h2`
   z-index: 1;
   display: grid;
   width: 100%;
+  height: 4rem;
   place-items: center;
   margin: 0;
   font-size: 1.2em;

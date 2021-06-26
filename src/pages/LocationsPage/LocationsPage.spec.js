@@ -1,9 +1,9 @@
 import { render, screen } from '@testing-library/react'
-import SightseeingPage from './SightseeingPage'
+import LocationsPage from './LocationsPage'
 
-describe('SightseeingPage', () => {
+describe('LocationsPage', () => {
   it('renders a list of places with a title and an image', () => {
-    render(<SightseeingPage />)
+    render(<LocationsPage />)
 
     const title = screen.getAllByRole('heading')
     expect(title).toHaveLength(6)
