@@ -28,6 +28,14 @@ export default function App() {
   ]
 
   useEffect(() => {
+    console.log('abc')
+    fetch('/api/search/location=hamburg')
+      .then(res => res.json())
+      .then(data => console.log(data))
+      .catch(error => console.error(error))
+  }, [])
+
+  useEffect(() => {
     saveToLocal('locations', locations)
   }, [locations])
 
