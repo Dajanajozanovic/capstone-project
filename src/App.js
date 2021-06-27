@@ -6,7 +6,11 @@ import locationsData from './locations.json'
 import FavoritePage from './pages/FavoritePage/FavoritePage'
 import HomePage from './pages/HomePage/HomePage'
 import LocationsPage from './pages/LocationsPage/LocationsPage'
+import restructureLocation from './services/restructureLocation'
 import { loadFromLocal, saveToLocal } from './utils/localStorage'
+
+const fsqId = process.env.REACT_APP_ID_FSQ
+const fsqKey = process.env.REACT_APP_KEY_FSQ
 
 export default function App() {
   const [locations, setLocations] = useState(
@@ -28,16 +32,43 @@ export default function App() {
   ]
 
   useEffect(() => {
-    console.log('abc')
-    fetch('/api/search/location=hamburg')
+    saveToLocal('locations', locations)
+  }, [locations])
+
+  useEffect(() => {
+    const url = `https://api.foursquare.com/v2/venues/explore?client_id=${fsqId}&client_secret=${fsqKey}&v=20180323&near=hamburg&limit=10&query=`
+    const query = 'restaurants'
+
+    fetch(url + query)
       .then(res => res.json())
-      .then(data => console.log(data))
+      .then(data => {
+        const rawLocations = data.response.groups[0].items
+
+        const newLocations = rawLocations.map(restructureLocation)
+        console.log(newLocations)
+      })
+
       .catch(error => console.error(error))
   }, [])
 
-  useEffect(() => {
-    saveToLocal('locations', locations)
-  }, [locations])
+  // useEffect(() => {
+  //   const url = `https://api.foursquare.com/v2/venues/565efbec38fa8b3886dece3e/photos?client_id=${fsqId}&client_secret=${fsqKey}&v=20180323`
+
+  //   fetch(url)
+  //     .then(res => res.json())
+  //     .then(data => console.log(data))
+  //     .catch(error => console.error(error))
+  // }, [])
+
+  // useEffect(() => {
+
+  //   fetch(
+  //     'api.openweathermap.org/data/2.5/weather?id={hamburg}&appid={31ff56faf98e6f2ffca96d94ef3aa13a}'
+  //   )
+  //     .then(res => res.json())
+  //     .then(data => console.log(data))
+  //     .catch(error => console.error(error))
+  // }, [])
 
   return (
     <AppGrid>
