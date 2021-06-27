@@ -37,7 +37,7 @@ export default function FavoritePage({ favorites, handleBookmark }) {
           )}
         </ListWrapper>
       ) : (
-        "You don't have any favorite Locations."
+        "You don't have any favorite Locations yet.❤️"
       )}
     </Wrapper>
   )

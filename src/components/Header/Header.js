@@ -22,7 +22,7 @@ const HeaderStyled = styled.h1`
   font-weight: 500;
   padding: 20px;
   justify-self: center;
-  box-shadow: 0 8px 16px #ffe4e1;
+  box-shadow: 0 4px 8px #ffe4e1;
   font-size: 20px;
   color: grey;
   /* box-shadow: 3px 3px 8px #656565, -24px -24px 48px #ffffff; */

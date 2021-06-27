@@ -26,8 +26,8 @@ const BookmarkStyled = styled.div`
     position: absolute;
     top: 15px;
     right: 10px;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     cursor: pointer;
   }
 `

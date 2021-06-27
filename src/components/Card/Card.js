@@ -48,7 +48,7 @@ export default function Card({
         )}
 
         <ButtonExpansion onClick={() => setIsExpanded(!isExpanded)}>
-          {isExpanded ? 'Hide details' : 'Show details'}
+          {isExpanded ? 'HIDE DETAILS' : 'SHOW DETAILS'}
         </ButtonExpansion>
       </CardList>
     </CardWrapper>
@@ -74,7 +74,7 @@ const CardList = styled.section`
   max-width: 100%;
   list-style-type: none;
   color: dimgrey;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.7);
 
   img {
     width: 90%;
@@ -88,6 +88,7 @@ const CardList = styled.section`
 const ButtonExpansion = styled.button`
   display: grid;
   padding: 8px;
-  border-radius: none;
+  border-radius: 15px;
   width: 80%;
+  color: dimgrey;
 `
