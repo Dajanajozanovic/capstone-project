@@ -43,7 +43,6 @@ export default function App() {
       .then(res => res.json())
       .then(data => {
         const rawLocations = data.response.groups[0].items
-
         const newLocations = rawLocations.map(restructureLocation)
         console.log(newLocations)
       })
