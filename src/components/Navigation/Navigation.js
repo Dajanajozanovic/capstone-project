@@ -31,28 +31,14 @@ export default function Navigation() {
   )
 }
 
-// export default function Navigation({ pages }) {
-//   return (
-//     <Nav>
-//       {pages.map(({ title, path }) => (
-//         <StyledNavLink
-//           activeStyle={{ backgroundColor: 'lightpink' }}
-//           key={title}
-//           exact
-//           to={path}
-//         >
-//           {title}
-//         </StyledNavLink>
-//       ))}
-//     </Nav>
-//   )
-// }
-
 const Nav = styled.nav`
   height: 4rem;
-  background-color: whitesmoke;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  background-color: transparent;
+  gap: 8px;
+  margin: 4px;
+  display: flex;
+  justify-content: space-evenly;
   justify-items: center;
   img {
     width: 32px;
@@ -61,14 +47,17 @@ const Nav = styled.nav`
 `
 
 const StyledNavLink = styled(NavLink)`
-  width: 100%;
-  text-align: center;
-  padding: 16px 6px;
+  background-color: var(--color-navigation-background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3rem;
+  padding: 24px;
   border: none;
-  color: grey;
+  color: var(--color-navigation);
   text-decoration: none;
   box-shadow: 5px 5px 10px rgba(13, 13, 13, 0.2);
   &:hover {
-    background-color: lightpink;
+    background-color: var(--color-navigation-hover);
   }
 `
