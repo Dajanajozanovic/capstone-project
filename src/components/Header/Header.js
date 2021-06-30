@@ -15,7 +15,7 @@ const HeaderStyled = styled.h1`
   z-index: 1;
   display: grid;
   width: 100%;
-  height: 4rem;
+  height: 4.5rem;
   place-items: center;
   margin: 0;
   font-size: 1.2em;
@@ -24,7 +24,9 @@ const HeaderStyled = styled.h1`
   justify-self: center;
   box-shadow: 0 4px 8px #ffe4e1;
   font-size: 25px;
-  color: grey;
+  color: var(--color-primary);
   /* box-shadow: 3px 3px 8px #656565, -24px -24px 48px #ffffff; */
-  background-color: whitesmoke;
+
+  background: var(--color-heade-background);
+  box-shadow: 30px 30px 100px #5c6d76, -30px -30px 100px #ffffff;
 `
