@@ -13,15 +13,15 @@ const fsqId = process.env.REACT_APP_ID_FSQ
 const fsqKey = process.env.REACT_APP_KEY_FSQ
 
 export default function App() {
+  const [sightseeing, setSightseeing] = useState([])
+
   const [locations, setLocations] = useState(
     loadFromLocal('locations') ?? locationsData
   )
-  const restaurants = locations.filter(
-    location => location.type === 'restaurant'
-  )
-  const sightseeing = locations.filter(
-    location => location.type === 'sightseeing'
-  )
+  const [restaurants, setRestaurants] = useState([])
+
+  const [query, setQuery] = useState('restaurants')
+
   const favorites = locations.filter(location => location.isFavorite)
 
   const pages = [
@@ -35,21 +35,36 @@ export default function App() {
     saveToLocal('locations', locations)
   }, [locations])
 
+  //restaurants
   useEffect(() => {
     const url = `https://api.foursquare.com/v2/venues/explore?client_id=${fsqId}&client_secret=${fsqKey}&v=20180323&near=hamburg&limit=10&query=`
-    const query = 'restaurants'
 
     fetch(url + query)
       .then(res => res.json())
       .then(data => {
         const rawLocations = data.response.groups[0].items
         const newLocations = rawLocations.map(restructureLocation)
-        console.log(newLocations)
+        setRestaurants(newLocations)
       })
+      .catch(error => console.error(error))
+  }, [query])
 
+  //  sightseeing
+  useEffect(() => {
+    const url = `https://api.foursquare.com/v2/venues/explore?client_id=${fsqId}&client_secret=${fsqKey}&v=20180323&near=hamburg&limit=30&query=`
+    const query = 'Sightseeing'
+
+    fetch(url + query)
+      .then(res => res.json())
+      .then(data => {
+        const rawLocations = data.response.groups[0].items
+        const newLocations = rawLocations.map(restructureLocation)
+        setSightseeing(newLocations)
+      })
       .catch(error => console.error(error))
   }, [])
 
+  //fetch of photos
   // useEffect(() => {
   //   const url = `https://api.foursquare.com/v2/venues/565efbec38fa8b3886dece3e/photos?client_id=${fsqId}&client_secret=${fsqKey}&v=20180323`
 
@@ -59,8 +74,8 @@ export default function App() {
   //     .catch(error => console.error(error))
   // }, [])
 
+  //fetch of wheather api
   // useEffect(() => {
-
   //   fetch(
   //     'api.openweathermap.org/data/2.5/weather?id={hamburg}&appid={31ff56faf98e6f2ffca96d94ef3aa13a}'
   //   )
@@ -89,6 +104,7 @@ export default function App() {
             title="Food and Drinks"
             locations={restaurants}
             handleBookmark={handleBookmark}
+            setQuery={setQuery}
           />
         </Route>
 
@@ -117,7 +133,7 @@ export default function App() {
 
 const AppGrid = styled.div`
   display: grid;
-  grid-template-rows: auto 4rem;
+  grid-template-rows: auto 4.5rem;
   width: 100vw;
   height: 100vh;
   background-image: url('https://images.unsplash.com/photo-1560158220-84217e289b76?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjZ8fGhhbWJ1cmd8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60');
