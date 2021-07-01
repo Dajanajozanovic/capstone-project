@@ -7,10 +7,28 @@ LocationsPage.propTypes = {
   onNavigate: PropTypes.func.isRequired,
 }
 
-export default function LocationsPage({ handleBookmark, locations, title }) {
+export default function LocationsPage({
+  handleBookmark,
+  locations,
+  title,
+  setQuery,
+}) {
   return (
     <Wrapper>
       <Header>{title}</Header>
+
+      {title === 'Food and Drinks' && (
+        <Form onSubmit={handleSubmit}>
+          <Input
+            type="text"
+            placeholder="Search for your restaurants"
+            name="search"
+            aria-label="Search for restaurants"
+            autoComplete="off"
+          />
+        </Form>
+      )}
+
       <ListWrapper>
         {locations.map(location => {
           return (
@@ -24,6 +42,13 @@ export default function LocationsPage({ handleBookmark, locations, title }) {
       </ListWrapper>
     </Wrapper>
   )
+
+  function handleSubmit(event) {
+    event.preventDefault()
+    const form = event.target
+    const input = form.elements.search.value
+    setQuery(input)
+  }
 }
 const Wrapper = styled.section`
   display: grid;
@@ -31,4 +56,16 @@ const Wrapper = styled.section`
 `
 const ListWrapper = styled.ul`
   padding: 0;
+`
+const Form = styled.form`
+  align-self: center;
+  justify-self: center;
+  padding-bottom: 150px;
+`
+
+const Input = styled.input`
+  border: 1px solid #d3d3d3;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin: 10px 0;
 `
