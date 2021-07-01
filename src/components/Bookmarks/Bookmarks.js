@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types'
 import styled from 'styled-components/macro'
-import bookmarkActive from './../../images/red_heart.png'
-import bookmarkInactive from './../../images/rosa_heart.png'
+
+import { ReactComponent as bookmarkActive } from '../../assets/icons/anchor.svg'
+import { ReactComponent as bookmarkInactive } from '../../assets/icons/anchor.svg'
 
 Bookmarks.propTypes = {
   onClick: PropTypes.func.isRequired,
@@ -24,8 +25,8 @@ export default function Bookmarks({ isBookmarked, onClick, ...props }) {
 const BookmarkStyled = styled.div`
   img {
     position: absolute;
-    top: 15px;
-    right: 10px;
+    top: 35px;
+    right: 35px;
     width: 30px;
     height: 30px;
     cursor: pointer;
