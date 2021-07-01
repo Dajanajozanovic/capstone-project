@@ -9,8 +9,9 @@ export default createGlobalStyle`
 
 
 :root{
---color-primary: #304269;
+--color-primary: rgba(48, 66, 105, 0.7);
 --color-primary-background: #91BED4;
+--color-primary-background-font: #304269;
 --color-secondary: #FFFFFF;
 --color-secondary-background: ##F26101;
 --color-active: whitesmoke;
