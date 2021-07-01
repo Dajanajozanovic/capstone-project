@@ -37,7 +37,7 @@ export default function App() {
 
   //restaurants
   useEffect(() => {
-    const url = `https://api.foursquare.com/v2/venues/explore?client_id=${fsqId}&client_secret=${fsqKey}&v=20180323&near=hamburg&limit=10&query=`
+    const url = `https://api.foursquare.com/v2/venues/explore?client_id=${fsqId}&client_secret=${fsqKey}&v=20180323&near=hamburg&limit=20&query=`
 
     fetch(url + query)
       .then(res => res.json())
@@ -51,12 +51,13 @@ export default function App() {
 
   //  sightseeing
   useEffect(() => {
-    const url = `https://api.foursquare.com/v2/venues/explore?client_id=${fsqId}&client_secret=${fsqKey}&v=20180323&near=hamburg&limit=30&query=`
-    const query = 'Sightseeing'
+    const url = `https://api.foursquare.com/v2/venues/explore?client_id=${fsqId}&client_secret=${fsqKey}&v=20180323&near=hamburg&limit=50&query=`
+    const query = 'Denkmal'
 
     fetch(url + query)
       .then(res => res.json())
       .then(data => {
+        console.log(data.response)
         const rawLocations = data.response.groups[0].items
         const newLocations = rawLocations.map(restructureLocation)
         setSightseeing(newLocations)
@@ -64,17 +65,22 @@ export default function App() {
       .catch(error => console.error(error))
   }, [])
 
-  //fetch of photos
-  // useEffect(() => {
-  //   const url = `https://api.foursquare.com/v2/venues/565efbec38fa8b3886dece3e/photos?client_id=${fsqId}&client_secret=${fsqKey}&v=20180323`
+  useEffect(() => {
+    const url = `https://api.foursquare.com/v2/venues/4b17f339f964a52014ca23e3/photos?client_id=${fsqId}&client_secret=${fsqKey}&v=20180323`
+    fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        // const image =
+        //   data?.response.photo.prefix +
+        //   '500x500' +
+        //   data?.response.photo.suffix
+        // console.log(image)
+        console.log(data)
+      })
+      .catch(error => console.error(error))
+  }, [query])
 
-  //   fetch(url)
-  //     .then(res => res.json())
-  //     .then(data => console.log(data))
-  //     .catch(error => console.error(error))
-  // }, [])
-
-  //fetch of wheather api
+  // fetch of wheather api
   // useEffect(() => {
   //   fetch(
   //     'api.openweathermap.org/data/2.5/weather?id={hamburg}&appid={31ff56faf98e6f2ffca96d94ef3aa13a}'
