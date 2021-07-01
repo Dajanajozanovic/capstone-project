@@ -14,12 +14,10 @@ Card.propTypes = {
 
 export default function Card({
   id,
-  text,
   title,
-  image,
   address,
-  openingHours,
-  entry,
+  recommendation,
+  categorie,
   handleBookmark,
   isFavorite,
 }) {
@@ -33,22 +31,20 @@ export default function Card({
         onClick={() => handleBookmark(id)}
       />
       <CardList>
-        <img src={image} alt="" />
         <h2>{title}</h2>
 
         {isExpanded && (
           <div>
-            <p>{text}</p>
-            <p>{address}</p>
-            <p>{entry}</p>
-            {openingHours.map(openingHours => (
-              <p>{openingHours}</p>
+            <p>{recommendation}</p>
+            <p>{categorie}</p>
+            {address.map(add => (
+              <p key={add}>{add}</p>
             ))}
           </div>
         )}
 
         <ButtonExpansion onClick={() => setIsExpanded(!isExpanded)}>
-          {isExpanded ? 'HIDE DETAILS' : 'SHOW DETAILS'}
+          {isExpanded ? 'Show less' : 'Show more'}
         </ButtonExpansion>
       </CardList>
     </CardWrapper>
@@ -68,13 +64,13 @@ const CardList = styled.section`
   padding: 20px;
   justify-items: center;
   align-items: center;
-  border-radius: 8px;
+  border-radius: 100px;
   box-shadow: 0 8px 16px #0006;
   display: grid;
   max-width: 100%;
   list-style-type: none;
-  color: dimgrey;
-  background-color: rgba(255, 255, 255, 0.7);
+  color: var(--color-secondary);
+  background: var(--color-primary);
 
   img {
     width: 90%;
@@ -86,9 +82,16 @@ const CardList = styled.section`
 `
 
 const ButtonExpansion = styled.button`
+  letter-spacing: 0.1rem;
+  border: none;
   display: grid;
   padding: 8px;
   border-radius: 15px;
   width: 80%;
-  color: dimgrey;
+  border-radius: 114px;
+  background: var(--color-navigation-background);
+  color: var(--color-primary-background-font);
+  &:hover {
+    background-color: var(--color-navigation-hover);
+  }
 `
