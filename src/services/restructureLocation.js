@@ -1,7 +1,6 @@
 export default function restructureLocation(location) {
-  console.log(location)
   const newLocation = {
-    name: location.venue.name,
+    title: location.venue.name,
     id: location.venue.id,
     address: location.venue.location.formattedAddress.slice(0, 2),
     categorie: location.venue.categories[0].name,
