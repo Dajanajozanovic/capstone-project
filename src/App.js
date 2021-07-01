@@ -66,19 +66,25 @@ export default function App() {
   }, [])
 
   useEffect(() => {
-    const url = `https://api.foursquare.com/v2/venues/4b17f339f964a52014ca23e3/photos?client_id=${fsqId}&client_secret=${fsqKey}&v=20180323`
-    fetch(url)
-      .then(res => res.json())
-      .then(data => {
-        // const image =
-        //   data?.response.photo.prefix +
-        //   '500x500' +
-        //   data?.response.photo.suffix
-        // console.log(image)
-        console.log(data)
+    const promises = restaurants.map(venue => {
+      const url = `https://api.foursquare.com/v2/venues/${venue.id}/photos?client_id=${fsqId}&client_secret=${fsqKey}&v=20180323`
+      return fetch(url).then(res => res.json())
+    })
+    Promise.all(promises)
+      .then(imageResponses => {
+        console.log('imageResponses', imageResponses)
+        const updatedRestaurants = imageResponses.slice(0, 2).map(data => {
+          const locationId = data.meta.requestId
+          const images = data.response.photos?.items?.map(
+            item => item.prefix + 'width300' + item.suffix
+          )
+          const foundRestaurant = restaurants.find(res => res.id === locationId)
+          return { ...foundRestaurant, images }
+        })
+        setRestaurants(updatedRestaurants)
       })
       .catch(error => console.error(error))
-  }, [query])
+  }, [restaurants])
 
   // fetch of wheather api
   // useEffect(() => {
