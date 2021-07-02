@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import naviIconsSightseeing from './../../images/naviIcons/sightseeing.png'
 import naviIconsRestaurants from './../../images/naviIcons/restaurants.png'
-import naviIconsFavorites from './../../images/naviIcons/heart.png'
+import naviIconsFavorites from '../../images/naviIcons/anchor.png'
 import naviIconsHome from './../../images/naviIcons/home.png'
 
 Navigation.propTypes = {
@@ -19,9 +19,11 @@ export default function Navigation() {
         <img src={naviIconsHome} alt="" />
       </StyledNavLink>
       <StyledNavLink exact to="/sightseeing" activeClassName="active">
+        {' '}
         <img src={naviIconsSightseeing} alt="" />
       </StyledNavLink>
       <StyledNavLink exact to="/restaurants" activeClassName="active">
+        {' '}
         <img src={naviIconsRestaurants} alt="" />
       </StyledNavLink>
       <StyledNavLink exact to="/myfavorites" activeClassName="active">

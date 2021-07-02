@@ -13,12 +13,14 @@ export default createGlobalStyle`
 --color-primary-background: #91BED4;
 --color-primary-background-font: #304269;
 --color-secondary: #FFFFFF;
---color-secondary-background: ##F26101;
+--color-secondary-background: #F26101;
 --color-active: whitesmoke;
 --color-active-background: #F26101;
 --color-navigation-hover: #91BED4;
 --color-navigation-background: #D9E8F5;
 --color-heade-background: #D9E8F5;
+--color-anchor: #f4a460;
+--color-anchor-active: #F26101;
 }
 
 

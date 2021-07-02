@@ -1,8 +1,7 @@
 import PropTypes from 'prop-types'
 import styled from 'styled-components/macro'
 
-import { ReactComponent as bookmarkActive } from '../../assets/icons/anchor.svg'
-import { ReactComponent as bookmarkInactive } from '../../assets/icons/anchor.svg'
+import { ReactComponent as BookmarkIcon } from '../../assets/icons/anchor.svg'
 
 Bookmarks.propTypes = {
   onClick: PropTypes.func.isRequired,
@@ -12,23 +11,29 @@ Bookmarks.propTypes = {
 
 export default function Bookmarks({ isBookmarked, onClick, ...props }) {
   return (
-    <BookmarkStyled {...props}>
-      <img
-        src={isBookmarked ? bookmarkActive : bookmarkInactive}
-        alt=""
-        onClick={onClick}
-      />
+    <BookmarkStyled onClick={onClick} isBookmarked={isBookmarked} {...props}>
+      <BookmarkIcon />
     </BookmarkStyled>
   )
 }
 
 const BookmarkStyled = styled.div`
-  img {
-    position: absolute;
-    top: 35px;
-    right: 35px;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  /* width: 50px;
+  height: 40px; */
+  cursor: pointer;
+
+  svg {
+    width: 40px;
+    height: 40px;
+    color: ${props =>
+      props.isBookmarked
+        ? 'var(--color-active-background)'
+        : 'var(--color-anchor)'};
+    :hover {
+      color: var(--color-active-background);
+    }
   }
 `

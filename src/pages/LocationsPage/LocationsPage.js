@@ -61,6 +61,10 @@ const Form = styled.form`
   align-self: center;
   justify-self: center;
   padding-bottom: 150px;
+  padding: 30px;
+  display: grid;
+  justify-content: center;
+  overflow-y: auto;
 `
 
 const Input = styled.input`
@@ -68,4 +72,6 @@ const Input = styled.input`
   border-radius: 10px;
   padding: 10px 20px;
   margin: 10px 0;
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
 `
