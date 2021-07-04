@@ -9,22 +9,24 @@ export default function Header({ children }) {
   return <HeaderStyled>{children}</HeaderStyled>
 }
 
-const HeaderStyled = styled.h2`
+const HeaderStyled = styled.h1`
+  background: left 10%
+    url('https://media.istockphoto.com/photos/curious-seagull-picture-id157195802?k=6&m=157195802&s=612x612&w=0&h=jqll0mLGvmNjx5-PHkBm1465GZ1reesv-mIzmlJaOq0=');
+  font-style: oblique 40deg;
   position: sticky;
   top: 0;
   z-index: 1;
   display: grid;
   width: 100%;
-  height: 4rem;
+  height: 9.5rem;
   place-items: center;
   margin: 0;
   font-size: 1.2em;
-  font-weight: 500;
+  font-weight: 600;
   padding: 20px;
   justify-self: center;
-  box-shadow: 0 8px 16px #0006;
-  font-size: 20px;
-  color: grey;
-  box-shadow: 3px 3px 8px #656565, -24px -24px 48px #ffffff;
-  background-color: whitesmoke;
+  box-shadow: 0 4px 8px #ffe4e1;
+  font-size: 25px;
+  color: var(--color-primary);
+  box-shadow: 80px 0px 100px #5c6d76, -30px -30px 100px #ffffff;
 `

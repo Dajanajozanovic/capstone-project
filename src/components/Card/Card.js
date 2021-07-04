@@ -1,7 +1,8 @@
 import styled from 'styled-components/macro'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import Bookmarks from './../Bookmarks/Bookmarks'
+import { loadFromLocal, saveToLocal } from '../../utils/localStorage'
 
 Card.propTypes = {
   image: PropTypes.node.isRequired,
@@ -14,16 +15,38 @@ Card.propTypes = {
 
 export default function Card({
   id,
-  text,
   title,
-  image,
   address,
-  openingHours,
-  entry,
+  recommendation,
+  categorie,
   handleBookmark,
   isFavorite,
 }) {
+  const { REACT_APP_ID_FSQ, REACT_APP_KEY_FSQ } = process.env
   const [isExpanded, setIsExpanded] = useState(false)
+  const [images, setImages] = useState(loadFromLocal('images' + id) ?? [])
+
+  useEffect(() => {
+    if (isExpanded && images.length === 0) {
+      const url = `https://api.foursquare.com/v2/venues/${id}/photos?client_id=${REACT_APP_ID_FSQ}&client_secret=${REACT_APP_KEY_FSQ}&v=20180323`
+      fetch(url)
+        .then(res => res.json())
+        .then(data => {
+          data.response.photos &&
+            setImages([
+              ...data.response.photos?.items?.map(
+                item => item.prefix + 'width300' + item.suffix
+              ),
+            ])
+        })
+        .catch(error => console.log(error))
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isExpanded])
+
+  useEffect(() => {
+    saveToLocal('images' + id, images)
+  }, [id, images])
 
   return (
     <CardWrapper>
@@ -33,22 +56,21 @@ export default function Card({
         onClick={() => handleBookmark(id)}
       />
       <CardList>
-        <img src={image} alt="" />
+        {isExpanded && images?.map(image => <img src={image} alt="" />)}
         <h2>{title}</h2>
 
         {isExpanded && (
           <div>
-            <p>{text}</p>
-            <p>{address}</p>
-            <p>{entry}</p>
-            {openingHours.map(openingHours => (
-              <p>{openingHours}</p>
+            <p>{recommendation}</p>
+            <p>{categorie}</p>
+            {address.map(add => (
+              <p key={add}>{add}</p>
             ))}
           </div>
         )}
 
         <ButtonExpansion onClick={() => setIsExpanded(!isExpanded)}>
-          {isExpanded ? 'Hide details' : 'Show details'}
+          {isExpanded ? 'Show less' : 'Show more'}
         </ButtonExpansion>
       </CardList>
     </CardWrapper>
@@ -58,6 +80,9 @@ export default function Card({
 const CardWrapper = styled.section`
   position: relative;
   padding: 20px;
+  width: 90%;
+  justify-items: center;
+  margin: 0 auto;
 `
 
 const CardList = styled.section`
@@ -68,26 +93,33 @@ const CardList = styled.section`
   padding: 20px;
   justify-items: center;
   align-items: center;
-  border-radius: 8px;
+  border-radius: 40px;
   box-shadow: 0 8px 16px #0006;
   display: grid;
-  max-width: 100%;
+
   list-style-type: none;
-  color: dimgrey;
-  background-color: rgba(0, 0, 0, 0.1);
+  color: var(--color-secondary);
+  background: var(--color-primary);
 
   img {
-    width: 90%;
-    max-width: 600px;
-    margin: 10px;
+    max-width: 300px;
+    width: 100%;
     border-radius: 40px;
     object-fit: cover;
   }
 `
 
 const ButtonExpansion = styled.button`
+  letter-spacing: 0.1rem;
+  border: none;
   display: grid;
   padding: 8px;
-  border-radius: none;
+  border-radius: 15px;
   width: 80%;
+  border-radius: 114px;
+  background: var(--color-navigation-background);
+  color: var(--color-primary-background-font);
+  &:hover {
+    background-color: var(--color-navigation-hover);
+  }
 `
