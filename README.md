@@ -1,6 +1,6 @@
 # Visit Hamburg
 
-Welcome, here is my Capstone project of my web development bootcamp @neuefische for July 2021. My app is called "VisitHamburg", a tourist app, which helps you to find the best sightseeing and restaurant locations in Hamburg. Furthermore you can add your favorite location to your persona favorite page.
+Welcome, here is my Capstone project of my web development bootcamp @neuefische for July 2021. My app is called "VisitHamburg", a tourist app, which helps you to find the best sightseeing and restaurant locations in Hamburg. Furthermore you can add your favorite locations to your persona favorite page.
 
 <img width="373" alt="Screenshot 2021-07-04 at 19 18 31" src="https://user-images.githubusercontent.com/82399097/124393888-faa63d00-dcfc-11eb-9e6a-f3d09aaaa94d.png">
 
