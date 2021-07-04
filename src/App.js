@@ -6,7 +6,6 @@ import FavoritePage from './pages/FavoritePage/FavoritePage'
 import HomePage from './pages/HomePage/HomePage'
 import LocationsPage from './pages/LocationsPage/LocationsPage'
 import restructureLocation from './services/restructureLocation'
-// import { loadFromLocal, saveToLocal } from './utils/localStorage'
 
 const fsqId = process.env.REACT_APP_ID_FSQ
 const fsqKey = process.env.REACT_APP_KEY_FSQ
@@ -14,7 +13,6 @@ const fsqKey = process.env.REACT_APP_KEY_FSQ
 export default function App() {
   const [sightseeing, setSightseeing] = useState([])
   const [restaurants, setRestaurants] = useState([])
-  // const [locations, setLocations] = useState([])
   const [query, setQuery] = useState('restaurants')
 
   const sightseeingFavorites = sightseeing.filter(
@@ -30,10 +28,6 @@ export default function App() {
     { title: 'Food & Drinks', path: '/restaurants' },
     { title: 'Favorites', path: '/myfavorites' },
   ]
-
-  // useEffect(() => {
-  //   saveToLocal('locations', locations)
-  // }, [locations])
 
   //restaurants
   useEffect(() => {
