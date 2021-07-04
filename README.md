@@ -30,12 +30,19 @@ https://capstone-project-gdutucv5r-dajanajozanovic.vercel.app/
 ## Tech Stack
 
 React
+
 React Router
+
 PropTypes
+
 Styled Components
+
 Storybook
+
 React Testing Library
+
 Jest
+
 Vercel
     
     
