@@ -38,7 +38,6 @@ export default function App() {
       .then(data => {
         const rawLocations = data.response.groups[0].items
         const newLocations = rawLocations.map(restructureLocation)
-        console.log(newLocations)
         setRestaurants(newLocations)
       })
       .catch(error => console.error(error))

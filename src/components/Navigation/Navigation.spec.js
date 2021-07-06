@@ -1,13 +1,15 @@
 import { render } from '@testing-library/react'
+import { screen } from '@testing-library/react'
+import { MemoryRouter } from 'react-router-dom'
 import Navigation from './Navigation'
 
 describe('Navigation', () => {
-  it('renders a Navlink which includes a key and a path', async () => {
+  it('renders 4 links', () => {
     render(
-      <Navigation
-        onNav={jest.fn()}
-        pages={[{ key: 'title' }, { path: 'to' }]}
-      />
+      <MemoryRouter>
+        <Navigation />
+      </MemoryRouter>
     )
+    expect(screen.getAllByRole('link')).toHaveLength(4)
   })
 })

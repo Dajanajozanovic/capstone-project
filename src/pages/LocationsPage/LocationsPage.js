@@ -18,7 +18,7 @@ export default function LocationsPage({
       <Header>{title}</Header>
 
       {title === 'Food and Drinks' && (
-        <Form onSubmit={handleSubmit}>
+        <Form id="myForm" onSubmit={handleSubmit}>
           <Input
             type="text"
             placeholder="Search for your restaurants"
@@ -48,6 +48,7 @@ export default function LocationsPage({
     const form = event.target
     const input = form.elements.search.value
     setQuery(input)
+    form.reset()
   }
 }
 const Wrapper = styled.section`
