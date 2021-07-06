@@ -1,11 +1,9 @@
+import { render, screen } from '@testing-library/react'
+import Slider from './Slider'
 
-  import {render, screen} from '@testing-library/react'
-  import Slider from './Slider'
-    
-  describe('Slider', () => {
-      it('renders', () => {
-          render(<Slider />)
-          expect(screen.getByText('Slider')).toBeInTheDocument()
-      })
+describe('Slider', () => {
+  it('renders', () => {
+    render(<Slider />)
+    expect(screen.getByRole('Slider')).toBeInTheDocument()
   })
-        
+})
